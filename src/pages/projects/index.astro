@@ -1,0 +1,189 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { projects } from '../../data/projects';
+---
+
+<Layout 
+  title="All Projects - Portfolio"
+  description="Complete collection of development and security projects showcasing full-stack development and cybersecurity expertise."
+>
+  <Navigation />
+  
+  <main class="pt-24 pb-20">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">
+          <span class="gradient-text">All Projects</span>
+        </h1>
+        <p class="text-xl text-dark-300 text-center mb-12 max-w-3xl mx-auto">
+          Explore my complete portfolio of projects spanning full-stack development, cybersecurity, and innovative solutions.
+        </p>
+        
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <button class="filter-btn active px-6 py-2 rounded-full font-medium transition-all duration-300" data-filter="all">
+            All Projects
+          </button>
+          <button class="filter-btn px-6 py-2 rounded-full font-medium transition-all duration-300" data-filter="web">
+            Web Development
+          </button>
+          <button class="filter-btn px-6 py-2 rounded-full font-medium transition-all duration-300" data-filter="security">
+            Security
+          </button>
+          <button class="filter-btn px-6 py-2 rounded-full font-medium transition-all duration-300" data-filter="mobile">
+            Mobile
+          </button>
+        </div>
+        
+        <!-- Projects Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <div 
+              class="project-card glass-effect rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 group"
+              data-category={project.category}
+            >
+              <div class="relative overflow-hidden">
+                <img 
+                  src={project.images[0]} 
+                  alt={project.title}
+                  class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div class="absolute top-4 right-4">
+                  <span class={`px-3 py-1 rounded-full text-xs font-medium ${
+                    project.category === 'security' 
+                      ? 'bg-error-500 text-white' 
+                      : project.category === 'web' 
+                      ? 'bg-primary-500 text-white' 
+                      : 'bg-accent-500 text-white'
+                  }`}>
+                    {project.category.toUpperCase()}
+                  </span>
+                </div>
+                {project.featured && (
+                  <div class="absolute top-4 left-4">
+                    <span class="bg-warning-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                      Featured
+                    </span>
+                  </div>
+                )}
+              </div>
+              
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-3 group-hover:text-primary-400 transition-colors">
+                  {project.title}
+                </h3>
+                <p class="text-dark-300 mb-4 text-sm leading-relaxed">
+                  {project.description}
+                </p>
+                
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.slice(0, 3).map((tech) => (
+                    <span class="bg-dark-700 text-xs px-2 py-1 rounded-full text-dark-300">
+                      {tech}
+                    </span>
+                  ))}
+                  {project.technologies.length > 3 && (
+                    <span class="bg-dark-700 text-xs px-2 py-1 rounded-full text-dark-300">
+                      +{project.technologies.length - 3}
+                    </span>
+                  )}
+                </div>
+                
+                <div class="flex items-center justify-between">
+                  <a 
+                    href={`/projects/${project.id}`} 
+                    class="text-primary-400 hover:text-primary-300 font-medium text-sm transition-colors"
+                  >
+                    Learn More →
+                  </a>
+                  <div class="flex space-x-3">
+                    {project.demoUrl && (
+                      <a 
+                        href={project.demoUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="text-dark-400 hover:text-white transition-colors"
+                      >
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a 
+                        href={project.githubUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="text-dark-400 hover:text-white transition-colors"
+                      >
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .filter-btn {
+    background: transparent;
+    border: 2px solid #475569;
+    color: #94a3b8;
+  }
+  
+  .filter-btn:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+  }
+  
+  .filter-btn.active {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: white;
+  }
+  
+  .project-card.hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  // Project filtering functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const filter = this.dataset.filter;
+        
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Filter projects
+        projectCards.forEach(card => {
+          const category = card.dataset.category;
+          
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  });
+</script>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/icon-logo.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{Astro.props.title || 'Full-Stack Developer & Cybersecurity Analyst'}</title>
+		<meta name="description" content={Astro.props.description || 'Professional portfolio showcasing expertise in full-stack development and cybersecurity analysis.'} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-dark-900 text-white overflow-x-hidden">
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	html {
+		scroll-behavior: smooth;
+	}
+	
+	body {
+		font-family: 'Inter', system-ui, sans-serif;
+		line-height: 1.6;
+	}
+	
+	* {
+		box-sizing: border-box;
+	}
+	
+	.gradient-text {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+	
+	.glass-effect {
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+	}
+	
+	.tech-glow {
+		box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+	}
+	
+	.cyber-grid {
+		background-image: 
+			linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+		background-size: 50px 50px;
+	}
+	
+	.floating-animation {
+		animation: float 6s ease-in-out infinite;
+	}
+	
+	@keyframes float {
+		0%, 100% { transform: translateY(0px); }
+		50% { transform: translateY(-20px); }
+	}
+	
+	.scroll-smooth {
+		scroll-behavior: smooth;
+	}
+	
+	.text-shadow {
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	}
+</style>
