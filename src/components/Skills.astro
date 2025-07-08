@@ -24,8 +24,18 @@ const categoryColors = {
       </h2>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {Object.entries(skillsByCategory).map(([category, categorySkills]) => (
-          <div class="glass-effect rounded-2xl p-6 hover:scale-105 transition-all duration-300">
+        {Object.entries(skillsByCategory).map(([category, categorySkills], index) => {
+          const rotationClasses = [
+            'card-rotate-wobble',
+            'card-rotate-pendulum', 
+            'card-rotate-dance',
+            'card-rotate-wave'
+          ];
+          const rotationClass = rotationClasses[index % rotationClasses.length];
+          const delayClass = `card-delay-${(index % 4) + 1}`;
+          
+          return (
+          <div class={`glass-effect rounded-2xl p-6 transition-all duration-500 skill-card-effect group ${rotationClass} ${delayClass}`}>
             <h3 class="text-xl font-semibold mb-6 text-center capitalize">
               <span class={`text-${categoryColors[category]}-400`}>
                 {category === 'frontend' ? 'Frontend' : 
@@ -44,7 +54,7 @@ const categoryColors = {
                   </div>
                   <div class="w-full bg-dark-700 rounded-full h-2">
                     <div 
-                      class={`h-2 rounded-full bg-${categoryColors[category]}-500 transition-all duration-700 ease-out`}
+                      class={`h-2 rounded-full bg-${categoryColors[category]}-500 transition-all duration-700 ease-out skill-bar relative overflow-hidden`}
                       style={`width: ${skill.level}%`}
                     ></div>
                   </div>
@@ -52,7 +62,7 @@ const categoryColors = {
               ))}
             </div>
           </div>
-        ))}
+        )})}
       </div>
       
       <!-- Technology Logos -->
@@ -63,7 +73,7 @@ const categoryColors = {
             'React', 'Vue.js', 'Laravel', 'Node.js', 'Python', 'Docker', 
             'AWS', 'PostgreSQL', 'Redis', 'TypeScript', 'Tailwind', 'Linux'
           ].map((tech) => (
-            <div class="bg-dark-800 hover:bg-dark-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors tech-glow">
+            <div class="bg-dark-800 hover:bg-dark-700 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 tech-badge">
               {tech}
             </div>
           ))}
@@ -72,6 +82,83 @@ const categoryColors = {
     </div>
   </div>
 </section>
+
+<style>
+  .skill-card-effect {
+    position: relative;
+    animation: skillFloat 7s ease-in-out infinite;
+  }
+  
+  .skill-card-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.8s ease;
+    border-radius: 1rem;
+  }
+  
+  .skill-card-effect:hover::before {
+    left: 100%;
+  }
+  
+  .skill-card-effect:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  .skill-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 1s ease;
+  }
+  
+  .skill-card-effect:hover .skill-bar::before {
+    left: 100%;
+  }
+  
+  .tech-badge {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tech-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .tech-badge:hover::before {
+    left: 100%;
+  }
+  
+  .tech-badge:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+  }
+  
+  @keyframes skillFloat {
+    0%, 100% { 
+      transform: translateY(0px) rotateZ(0deg); 
+    }
+    50% { 
+      transform: translateY(-3px) rotateZ(0.3deg); 
+    }
+  }
+</style>
 
 <script>
   // Animate skill bars on scroll

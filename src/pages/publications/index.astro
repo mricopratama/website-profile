@@ -1,0 +1,208 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { publications } from '../../data/publications';
+
+const featuredPublications = publications.filter(pub => pub.featured);
+const otherPublications = publications.filter(pub => !pub.featured);
+---
+
+<Layout 
+  title="Publications & Research - Portfolio"
+  description="Research papers, articles, and publications in cybersecurity, software development, and technology."
+>
+  <Navigation />
+  
+  <main class="pt-24 pb-20">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">
+          <span class="gradient-text">Publications & Research</span>
+        </h1>
+        <p class="text-xl text-dark-300 text-center mb-12 max-w-3xl mx-auto">
+          Research contributions, technical articles, and publications advancing the fields of cybersecurity and software development.
+        </p>
+        
+        <!-- Featured Publications -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold mb-8 text-center">
+            <span class="text-primary-400">Featured Publications</span>
+          </h2>
+          
+          <div class="space-y-8">
+            {featuredPublications.map((publication) => (
+              <article class="glass-effect rounded-2xl p-8 hover:scale-[1.02] transition-all duration-300">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center space-x-4">
+                    <span class={`px-3 py-1 rounded-full text-sm font-medium ${
+                      publication.type === 'research-paper' 
+                        ? 'bg-primary-500 text-white' 
+                        : publication.type === 'whitepaper' 
+                        ? 'bg-accent-500 text-white' 
+                        : publication.type === 'article'
+                        ? 'bg-secondary-500 text-white'
+                        : 'bg-warning-500 text-white'
+                    }`}>
+                      {publication.type.replace('-', ' ').toUpperCase()}
+                    </span>
+                    <span class={`px-3 py-1 rounded-full text-sm font-medium ${
+                      publication.category === 'security' 
+                        ? 'bg-error-500 text-white' 
+                        : publication.category === 'development' 
+                        ? 'bg-success-500 text-white' 
+                        : 'bg-dark-600 text-white'
+                    }`}>
+                      {publication.category.toUpperCase()}
+                    </span>
+                  </div>
+                  <time class="text-dark-400">
+                    {new Date(publication.publishedDate).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </time>
+                </div>
+                
+                <h3 class="text-2xl font-bold mb-3">{publication.title}</h3>
+                <p class="text-primary-400 font-medium mb-3">{publication.publisher}</p>
+                <p class="text-dark-300 mb-4 leading-relaxed">
+                  {publication.description}
+                </p>
+                
+                <div class="bg-dark-800 rounded-lg p-4 mb-6">
+                  <h4 class="font-semibold mb-2 text-dark-200">Abstract</h4>
+                  <p class="text-dark-300 text-sm leading-relaxed">
+                    {publication.abstract}
+                  </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <h4 class="font-semibold mb-2 text-dark-200">Authors</h4>
+                    <div class="flex flex-wrap gap-2">
+                      {publication.authors.map((author) => (
+                        <span class="bg-dark-700 px-3 py-1 rounded-full text-sm">
+                          {author}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 class="font-semibold mb-2 text-dark-200">Tags</h4>
+                    <div class="flex flex-wrap gap-2">
+                      {publication.tags.map((tag) => (
+                        <span class="bg-dark-700 px-2 py-1 rounded-full text-xs text-dark-300">
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-6 text-sm text-dark-400">
+                    {publication.citations && (
+                      <span>Citations: {publication.citations}</span>
+                    )}
+                    {publication.doi && (
+                      <span class="font-mono">DOI: {publication.doi}</span>
+                    )}
+                  </div>
+                  
+                  {publication.url && (
+                    <a 
+                      href={publication.url}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center space-x-2 bg-primary-600 hover:bg-primary-500 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300"
+                    >
+                      <span>Read Publication</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Other Publications -->
+        {otherPublications.length > 0 && (
+          <div>
+            <h2 class="text-3xl font-bold mb-8 text-center">
+              <span class="text-accent-400">Other Publications</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+              {otherPublications.map((publication) => (
+                <article class="glass-effect rounded-2xl p-6 hover:scale-105 transition-all duration-300">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class={`px-3 py-1 rounded-full text-xs font-medium ${
+                      publication.type === 'research-paper' 
+                        ? 'bg-primary-500 text-white' 
+                        : publication.type === 'whitepaper' 
+                        ? 'bg-accent-500 text-white' 
+                        : publication.type === 'article'
+                        ? 'bg-secondary-500 text-white'
+                        : 'bg-warning-500 text-white'
+                    }`}>
+                      {publication.type.replace('-', ' ').toUpperCase()}
+                    </span>
+                    <time class="text-dark-400 text-sm">
+                      {new Date(publication.publishedDate).toLocaleDateString()}
+                    </time>
+                  </div>
+                  
+                  <h3 class="text-lg font-bold mb-2">{publication.title}</h3>
+                  <p class="text-primary-400 font-medium mb-3 text-sm">{publication.publisher}</p>
+                  <p class="text-dark-300 mb-4 text-sm leading-relaxed">
+                    {publication.description}
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    {publication.tags.slice(0, 4).map((tag) => (
+                      <span class="bg-dark-700 px-2 py-1 rounded-full text-xs text-dark-300">
+                        #{tag}
+                      </span>
+                    ))}
+                    {publication.tags.length > 4 && (
+                      <span class="bg-dark-700 px-2 py-1 rounded-full text-xs text-dark-300">
+                        +{publication.tags.length - 4}
+                      </span>
+                    )}
+                  </div>
+                  
+                  <div class="flex items-center justify-between">
+                    {publication.citations && (
+                      <span class="text-dark-400 text-xs">
+                        {publication.citations} citations
+                      </span>
+                    )}
+                    
+                    {publication.url && (
+                      <a 
+                        href={publication.url}
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="text-primary-400 hover:text-primary-300 font-medium text-sm transition-colors"
+                      >
+                        Read More →
+                      </a>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>

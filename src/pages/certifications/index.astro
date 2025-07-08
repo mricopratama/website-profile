@@ -1,0 +1,134 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { certifications } from '../../data/certifications';
+
+const certsByCategory = {
+  security: certifications.filter(cert => cert.category === 'security'),
+  development: certifications.filter(cert => cert.category === 'development'),
+  cloud: certifications.filter(cert => cert.category === 'cloud'),
+  'project-management': certifications.filter(cert => cert.category === 'project-management'),
+  other: certifications.filter(cert => cert.category === 'other'),
+};
+---
+
+<Layout 
+  title="Professional Certifications - Portfolio"
+  description="Professional certifications in cybersecurity, development, cloud computing, and project management."
+>
+  <Navigation />
+  
+  <main class="pt-24 pb-20">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">
+          <span class="gradient-text">Professional Certifications</span>
+        </h1>
+        <p class="text-xl text-dark-300 text-center mb-12 max-w-3xl mx-auto">
+          Industry-recognized certifications demonstrating expertise in cybersecurity, development, and technology leadership.
+        </p>
+        
+        <!-- Certifications by Category -->
+        {Object.entries(certsByCategory).map(([category, certs]) => (
+          certs.length > 0 && (
+            <div class="mb-16">
+              <h2 class="text-2xl font-bold mb-8 capitalize">
+                <span class={`${
+                  category === 'security' ? 'text-error-400' :
+                  category === 'development' ? 'text-primary-400' :
+                  category === 'cloud' ? 'text-accent-400' :
+                  'text-secondary-400'
+                }`}>
+                  {category.replace('-', ' ')} Certifications
+                </span>
+              </h2>
+              
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {certs.map((cert) => (
+                  <div class="glass-effect rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300">
+                    {cert.logo && (
+                      <div class="relative overflow-hidden">
+                        <img 
+                          src={cert.logo} 
+                          alt={cert.name}
+                          class="w-full h-32 object-cover"
+                        />
+                        <div class="absolute top-4 right-4">
+                          <span class={`px-3 py-1 rounded-full text-xs font-medium ${
+                            cert.category === 'security' 
+                              ? 'bg-error-500 text-white' 
+                              : cert.category === 'development' 
+                              ? 'bg-primary-500 text-white' 
+                              : cert.category === 'cloud'
+                              ? 'bg-accent-500 text-white'
+                              : 'bg-secondary-500 text-white'
+                          }`}>
+                            {cert.featured ? 'FEATURED' : 'CERTIFIED'}
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                    
+                    <div class="p-6">
+                      <h3 class="text-lg font-semibold mb-2">
+                        {cert.name}
+                      </h3>
+                      <p class="text-primary-400 font-medium mb-2">{cert.issuer}</p>
+                      <p class="text-dark-300 mb-4 text-sm leading-relaxed">
+                        {cert.description}
+                      </p>
+                      
+                      <div class="flex flex-wrap gap-2 mb-4">
+                        {cert.skills.map((skill) => (
+                          <span class="bg-dark-700 text-xs px-2 py-1 rounded-full text-dark-300">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <div class="space-y-2 mb-4 text-sm text-dark-400">
+                        <div class="flex justify-between">
+                          <span>Issued:</span>
+                          <span>{new Date(cert.issuedDate).toLocaleDateString()}</span>
+                        </div>
+                        {cert.expiryDate && (
+                          <div class="flex justify-between">
+                            <span>Expires:</span>
+                            <span>{new Date(cert.expiryDate).toLocaleDateString()}</span>
+                          </div>
+                        )}
+                        {cert.credentialId && (
+                          <div class="flex justify-between">
+                            <span>ID:</span>
+                            <span class="font-mono text-xs">{cert.credentialId}</span>
+                          </div>
+                        )}
+                      </div>
+                      
+                      {cert.credentialUrl && (
+                        <a 
+                          href={cert.credentialUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          class="inline-flex items-center space-x-2 text-primary-400 hover:text-primary-300 font-medium text-sm transition-colors"
+                        >
+                          <span>Verify Credential</span>
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                          </svg>
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )
+        ))}
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>

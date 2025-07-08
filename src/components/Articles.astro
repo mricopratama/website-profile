@@ -12,18 +12,31 @@ const featuredArticles = articles.filter(article => article.featured);
       </h2>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {featuredArticles.map((article, index) => (
+        {featuredArticles.map((article, index) => {
+          const rotationClasses = [
+            'card-rotate-dance',
+            'card-rotate-wave', 
+            'card-rotate-twist',
+            'card-rotate-wobble',
+            'card-rotate-spiral',
+            'card-rotate-pendulum'
+          ];
+          const rotationClass = rotationClasses[index % rotationClasses.length];
+          const delayClass = `card-delay-${(index % 9) + 1}`;
+          
+          return (
           <article 
-            class="glass-effect rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 group"
+            class={`glass-effect rounded-2xl overflow-hidden transition-all duration-500 group ${rotationClass} ${delayClass}`}
             data-aos="fade-up"
             data-aos-delay={index * 100}
+            style={`--delay: ${index * 0.15}s`}
           >
             {article.image && (
               <div class="relative overflow-hidden">
                 <img 
                   src={article.image} 
                   alt={article.title}
-                  class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  class="w-full h-48 object-cover group-hover:scale-110 group-hover:brightness-110 transition-all duration-700 ease-out"
                 />
                 <div class="absolute top-4 right-4">
                   <span class={`px-3 py-1 rounded-full text-xs font-medium ${
@@ -32,10 +45,12 @@ const featuredArticles = articles.filter(article => article.featured);
                       : article.category === 'development' 
                       ? 'bg-primary-500 text-white' 
                       : 'bg-accent-500 text-white'
-                  }`}>
+                  } breathing`}>
                     {article.category.toUpperCase()}
                   </span>
                 </div>
+                <div class="absolute inset-0 bg-gradient-to-br from-primary-500/20 via-transparent to-accent-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-accent-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </div>
             )}
             
@@ -48,7 +63,7 @@ const featuredArticles = articles.filter(article => article.featured);
                     day: 'numeric'
                   })}
                 </time>
-                <span class="text-sm text-dark-400">{article.readingTime} min read</span>
+                <span class="text-sm text-dark-400 breathing">{article.readingTime} min read</span>
               </div>
               
               <h3 class="text-xl font-semibold mb-3 group-hover:text-primary-400 transition-colors">
@@ -60,12 +75,12 @@ const featuredArticles = articles.filter(article => article.featured);
               
               <div class="flex flex-wrap gap-2 mb-4">
                 {article.tags.slice(0, 3).map((tag) => (
-                  <span class="bg-dark-700 text-xs px-2 py-1 rounded-full text-dark-300">
+                  <span class="bg-dark-700 text-xs px-2 py-1 rounded-full text-dark-300 hover:bg-primary-600 hover:text-white transition-all duration-300 breathing">
                     #{tag}
                   </span>
                 ))}
                 {article.tags.length > 3 && (
-                  <span class="bg-dark-700 text-xs px-2 py-1 rounded-full text-dark-300">
+                  <span class="bg-dark-700 text-xs px-2 py-1 rounded-full text-dark-300 hover:bg-primary-600 hover:text-white transition-all duration-300 breathing">
                     +{article.tags.length - 3}
                   </span>
                 )}
@@ -73,19 +88,19 @@ const featuredArticles = articles.filter(article => article.featured);
               
               <a 
                 href={`/articles/${article.id}`} 
-                class="text-primary-400 hover:text-primary-300 font-medium text-sm transition-colors"
+                class="text-primary-400 hover:text-primary-300 font-medium text-sm transition-all duration-300 hover:translate-x-2"
               >
                 Read More →
               </a>
             </div>
           </article>
-        ))}
+        )})}
       </div>
       
       <div class="text-center mt-12">
         <a 
           href="/articles" 
-          class="inline-flex items-center space-x-2 bg-primary-600 hover:bg-primary-500 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+          class="inline-flex items-center space-x-2 bg-primary-600 hover:bg-primary-500 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25 breathing"
         >
           <span>View All Articles</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,4 +110,3 @@ const featuredArticles = articles.filter(article => article.featured);
       </div>
     </div>
   </div>
-</section>
