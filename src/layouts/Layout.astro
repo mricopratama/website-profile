@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/icon-logo.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{Astro.props.title || 'Full-Stack Developer & Cybersecurity Analyst'}</title>
 		<meta name="description" content={Astro.props.description || 'Professional portfolio showcasing expertise in full-stack development and cybersecurity analysis.'} />
@@ -288,72 +288,72 @@
 	
 	/* Unique rotating card animations */
 	.card-rotate-continuous {
-		animation: cardRotateContinuous 20s linear infinite;
+		animation: cardRotateContinuous 25s linear infinite;
 		transform-style: preserve-3d;
 	}
 	
 	.card-rotate-wobble {
-		animation: cardWobble 8s ease-in-out infinite;
+		animation: cardWobble 12s ease-in-out infinite;
 		transform-style: preserve-3d;
 	}
 	
 	.card-rotate-orbit {
-		animation: cardOrbit 15s ease-in-out infinite;
+		animation: cardOrbit 18s ease-in-out infinite;
 		transform-style: preserve-3d;
 	}
 	
 	.card-rotate-flip {
-		animation: cardFlip 12s ease-in-out infinite;
+		animation: cardFlip 16s ease-in-out infinite;
 		transform-style: preserve-3d;
 	}
 	
 	.card-rotate-pendulum {
-		animation: cardPendulum 10s ease-in-out infinite;
+		animation: cardPendulum 14s ease-in-out infinite;
 		transform-style: preserve-3d;
 	}
 	
 	.card-rotate-spiral {
-		animation: cardSpiral 18s ease-in-out infinite;
+		animation: cardSpiral 22s ease-in-out infinite;
 		transform-style: preserve-3d;
 	}
 	
 	.card-rotate-dance {
-		animation: cardDance 14s ease-in-out infinite;
+		animation: cardDance 16s ease-in-out infinite;
 		transform-style: preserve-3d;
 	}
 	
 	.card-rotate-wave {
-		animation: cardWave 16s ease-in-out infinite;
+		animation: cardWave 18s ease-in-out infinite;
 		transform-style: preserve-3d;
 	}
 	
 	.card-rotate-twist {
-		animation: cardTwist 11s ease-in-out infinite;
+		animation: cardTwist 15s ease-in-out infinite;
 		transform-style: preserve-3d;
 	}
 	
 	/* Keyframes for unique card animations */
 	@keyframes cardRotateContinuous {
 		0% { transform: rotateY(0deg) rotateX(0deg) translateZ(0px); }
-		25% { transform: rotateY(90deg) rotateX(5deg) translateZ(10px); }
-		50% { transform: rotateY(180deg) rotateX(0deg) translateZ(0px); }
-		75% { transform: rotateY(270deg) rotateX(-5deg) translateZ(10px); }
-		100% { transform: rotateY(360deg) rotateX(0deg) translateZ(0px); }
+		25% { transform: rotateY(45deg) rotateX(2deg) translateZ(5px); }
+		50% { transform: rotateY(90deg) rotateX(0deg) translateZ(0px); }
+		75% { transform: rotateY(135deg) rotateX(-2deg) translateZ(5px); }
+		100% { transform: rotateY(180deg) rotateX(0deg) translateZ(0px); }
 	}
 	
 	@keyframes cardWobble {
 		0%, 100% { transform: rotateZ(0deg) rotateY(0deg) scale(1); }
-		25% { transform: rotateZ(2deg) rotateY(10deg) scale(1.02); }
-		50% { transform: rotateZ(0deg) rotateY(0deg) scale(1.05); }
-		75% { transform: rotateZ(-2deg) rotateY(-10deg) scale(1.02); }
+		25% { transform: rotateZ(1deg) rotateY(5deg) scale(1.01); }
+		50% { transform: rotateZ(0deg) rotateY(0deg) scale(1.02); }
+		75% { transform: rotateZ(-1deg) rotateY(-5deg) scale(1.01); }
 	}
 	
 	@keyframes cardOrbit {
 		0% { transform: rotateY(0deg) translateX(0px) rotateZ(0deg); }
-		25% { transform: rotateY(90deg) translateX(20px) rotateZ(5deg); }
-		50% { transform: rotateY(180deg) translateX(0px) rotateZ(0deg); }
-		75% { transform: rotateY(270deg) translateX(-20px) rotateZ(-5deg); }
-		100% { transform: rotateY(360deg) translateX(0px) rotateZ(0deg); }
+		25% { transform: rotateY(45deg) translateX(10px) rotateZ(2deg); }
+		50% { transform: rotateY(90deg) translateX(0px) rotateZ(0deg); }
+		75% { transform: rotateY(135deg) translateX(-10px) rotateZ(-2deg); }
+		100% { transform: rotateY(180deg) translateX(0px) rotateZ(0deg); }
 	}
 	
 	@keyframes cardFlip {
@@ -365,9 +365,9 @@
 	
 	@keyframes cardPendulum {
 		0%, 100% { transform: rotateZ(0deg) translateY(0px); }
-		25% { transform: rotateZ(15deg) translateY(-10px); }
+		25% { transform: rotateZ(8deg) translateY(-5px); }
 		50% { transform: rotateZ(0deg) translateY(0px); }
-		75% { transform: rotateZ(-15deg) translateY(-10px); }
+		75% { transform: rotateZ(-8deg) translateY(-5px); }
 	}
 	
 	@keyframes cardSpiral {
@@ -380,18 +380,18 @@
 	
 	@keyframes cardDance {
 		0%, 100% { transform: translateX(0px) translateY(0px) rotateZ(0deg); }
-		16% { transform: translateX(10px) translateY(-5px) rotateZ(3deg); }
-		33% { transform: translateX(-5px) translateY(10px) rotateZ(-2deg); }
-		50% { transform: translateX(8px) translateY(-8px) rotateZ(4deg); }
-		66% { transform: translateX(-10px) translateY(5px) rotateZ(-3deg); }
-		83% { transform: translateX(5px) translateY(-10px) rotateZ(2deg); }
+		16% { transform: translateX(5px) translateY(-2px) rotateZ(1deg); }
+		33% { transform: translateX(-2px) translateY(5px) rotateZ(-1deg); }
+		50% { transform: translateX(4px) translateY(-4px) rotateZ(2deg); }
+		66% { transform: translateX(-5px) translateY(2px) rotateZ(-1deg); }
+		83% { transform: translateX(2px) translateY(-5px) rotateZ(1deg); }
 	}
 	
 	@keyframes cardWave {
 		0%, 100% { transform: rotateX(0deg) translateY(0px) rotateZ(0deg); }
-		25% { transform: rotateX(10deg) translateY(-15px) rotateZ(2deg); }
+		25% { transform: rotateX(5deg) translateY(-8px) rotateZ(1deg); }
 		50% { transform: rotateX(0deg) translateY(0px) rotateZ(0deg); }
-		75% { transform: rotateX(-10deg) translateY(15px) rotateZ(-2deg); }
+		75% { transform: rotateX(-5deg) translateY(8px) rotateZ(-1deg); }
 	}
 	
 	@keyframes cardTwist {

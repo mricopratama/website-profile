@@ -1,41 +1,65 @@
 ---
 ---
 
-<section id="about" class="py-20 bg-dark-800/50 animated-background">
+<section id="about" class="py-20 bg-dark-800/50 animated-background cyber-section">
   <div class="container mx-auto px-6">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-        <span class="text-shimmer">About Me</span>
+        <span class="text-shimmer cyber-title">
+          <svg class="w-12 h-12 inline-block mr-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+          </svg>
+          System Analysis
+          <span class="title-decoration"></span>
+        </span>
       </h2>
       
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <!-- Text Content -->
-        <div class="space-y-6 breathing">
-          <p class="text-lg text-dark-300 leading-relaxed hover:text-dark-200 transition-colors duration-300">
-            With over 5 years of experience in full-stack development and cybersecurity, I specialize in creating secure, scalable applications that protect businesses from digital threats while delivering exceptional user experiences.
-          </p>
+        <div class="space-y-6 breathing cyber-content">
+          <div class="cyber-paragraph">
+            <span class="line-number">001</span>
+            <p class="text-lg text-dark-300 leading-relaxed hover:text-dark-200 transition-colors duration-300">
+              <span class="highlight-keyword">Penetration testing</span> mindset meets <span class="highlight-keyword">full-stack mastery</span>. 
+              I architect digital fortresses that withstand the most sophisticated attacks while delivering seamless user experiences.
+            </p>
+          </div>
           
-          <p class="text-lg text-dark-300 leading-relaxed hover:text-dark-200 transition-colors duration-300">
-            My journey began with a passion for solving complex problems through code. Today, I combine my development expertise with deep cybersecurity knowledge to build applications that are not just functional, but fortress-like in their security posture.
-          </p>
+          <div class="cyber-paragraph">
+            <span class="line-number">002</span>
+            <p class="text-lg text-dark-300 leading-relaxed hover:text-dark-200 transition-colors duration-300">
+              From <span class="highlight-keyword">zero-day vulnerabilities</span> to <span class="highlight-keyword">scalable microservices</span>, 
+              I bridge the gap between security and functionality. Every line of code is a defensive measure, every feature a calculated risk assessment.
+            </p>
+          </div>
           
-          <p class="text-lg text-dark-300 leading-relaxed hover:text-dark-200 transition-colors duration-300">
-            When I'm not coding or analyzing security vulnerabilities, you'll find me contributing to open-source projects, writing technical articles, or mentoring aspiring developers in the art of secure coding practices.
+          <div class="cyber-paragraph">
+            <span class="line-number">003</span>
+            <p class="text-lg text-dark-300 leading-relaxed hover:text-dark-200 transition-colors duration-300">
+              When not hunting bugs or crafting bulletproof APIs, I contribute to <span class="highlight-keyword">open-source security tools</span> 
+              and mentor the next generation of <span class="highlight-keyword">ethical hackers</span>.
+            </p>
           </p>
           
           <!-- Key Achievements -->
-          <div class="space-y-4 mt-8">
-            <div class="flex items-start space-x-3 hover:translate-x-2 transition-transform duration-300">
-              <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 breathing"></div>
-              <p class="text-dark-300">Led security audits for Fortune 500 companies, identifying and resolving critical vulnerabilities</p>
+          <div class="space-y-4 mt-8 cyber-achievements">
+            <div class="achievement-item">
+              <svg class="w-6 h-6 text-success-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z"/>
+              </svg>
+              <p class="text-dark-300">Secured <span class="highlight-number">50+</span> enterprise systems against advanced persistent threats</p>
             </div>
-            <div class="flex items-start space-x-3 hover:translate-x-2 transition-transform duration-300">
-              <div class="w-2 h-2 bg-accent-500 rounded-full mt-2 breathing"></div>
-              <p class="text-dark-300">Architected and deployed scalable applications serving millions of users</p>
+            <div class="achievement-item">
+              <svg class="w-6 h-6 text-warning-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7,2V13H10V22L17,10H13L17,2H7Z"/>
+              </svg>
+              <p class="text-dark-300">Architected <span class="highlight-number">99.9%</span> uptime systems serving millions of users</p>
             </div>
-            <div class="flex items-start space-x-3 hover:translate-x-2 transition-transform duration-300">
-              <div class="w-2 h-2 bg-secondary-500 rounded-full mt-2 breathing"></div>
-              <p class="text-dark-300">Published research on modern web security threats and mitigation strategies</p>
+            <div class="achievement-item">
+              <svg class="w-6 h-6 text-primary-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19,3H5C3.9,3 3,3.9 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.9 20.1,3 19,3M5,19V5H19V19H5Z"/>
+              </svg>
+              <p class="text-dark-300">Published <span class="highlight-number">15+</span> security research papers and vulnerability disclosures</p>
             </div>
           </div>
         </div>
@@ -43,45 +67,70 @@
         <!-- Visual Elements -->
         <div class="space-y-8">
           <!-- Experience Timeline -->
-          <div class="glass-effect rounded-2xl p-6 transition-all duration-500 breathing card-rotate-pendulum card-delay-1">
-            <h3 class="text-xl font-semibold mb-6 text-center">Experience Journey</h3>
-            <div class="space-y-4">
-              <div class="flex items-center space-x-4 hover:translate-x-2 transition-transform duration-300">
-                <div class="w-4 h-4 bg-primary-500 rounded-full breathing"></div>
+          <div class="glass-effect rounded-2xl p-6 transition-all duration-500 breathing card-rotate-pendulum card-delay-1 cyber-timeline">
+            <h3 class="text-xl font-semibold mb-6 text-center cyber-subtitle">
+              <svg class="w-6 h-6 inline-block mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,15.4L16.2,16.2Z"/>
+              </svg>
+              Mission Timeline
+            </h3>
+            <div class="space-y-4 timeline-container">
+              <div class="timeline-item">
+                <div class="timeline-dot senior"></div>
                 <div>
-                  <div class="font-semibold">Senior Full-Stack Developer</div>
+                  <div class="font-semibold text-primary-400">Senior Security Architect</div>
                   <div class="text-sm text-dark-400">2022 - Present</div>
+                  <div class="text-xs text-dark-500">Leading enterprise security initiatives</div>
                 </div>
               </div>
-              <div class="flex items-center space-x-4 hover:translate-x-2 transition-transform duration-300">
-                <div class="w-4 h-4 bg-accent-500 rounded-full breathing"></div>
+              <div class="timeline-item">
+                <div class="timeline-dot analyst"></div>
                 <div>
-                  <div class="font-semibold">Cybersecurity Analyst</div>
+                  <div class="font-semibold text-accent-400">Cybersecurity Specialist</div>
                   <div class="text-sm text-dark-400">2021 - Present</div>
+                  <div class="text-xs text-dark-500">Threat hunting & incident response</div>
                 </div>
               </div>
-              <div class="flex items-center space-x-4 hover:translate-x-2 transition-transform duration-300">
-                <div class="w-4 h-4 bg-secondary-500 rounded-full breathing"></div>
+              <div class="timeline-item">
+                <div class="timeline-dot developer"></div>
                 <div>
-                  <div class="font-semibold">Full-Stack Developer</div>
+                  <div class="font-semibold text-secondary-400">Full-Stack Developer</div>
                   <div class="text-sm text-dark-400">2019 - 2022</div>
+                  <div class="text-xs text-dark-500">Building secure web applications</div>
                 </div>
               </div>
             </div>
           </div>
           
           <!-- Current Focus -->
-          <div class="glass-effect rounded-2xl p-6 transition-all duration-500 breathing card-rotate-wave card-delay-3">
-            <h3 class="text-xl font-semibold mb-4 text-center">Current Focus</h3>
-            <div class="space-y-3">
-              <div class="bg-dark-700 rounded-lg p-3 hover:bg-primary-600 hover:scale-105 transition-all duration-300">
-                <span class="text-sm font-medium text-primary-400">Zero Trust Architecture</span>
+          <div class="glass-effect rounded-2xl p-6 transition-all duration-500 breathing card-rotate-wave card-delay-3 cyber-focus">
+            <h3 class="text-xl font-semibold mb-4 text-center cyber-subtitle">
+              <svg class="w-6 h-6 inline-block mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+              </svg>
+              Active Operations
+            </h3>
+            <div class="space-y-3 focus-grid">
+              <div class="focus-item zero-trust">
+                <svg class="w-5 h-5 text-primary-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10A2,2 0 0,1 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z"/>
+                </svg>
+                <span class="text-sm font-medium">Zero Trust Architecture</span>
+                <div class="focus-progress"></div>
               </div>
-              <div class="bg-dark-700 rounded-lg p-3 hover:bg-accent-600 hover:scale-105 transition-all duration-300">
-                <span class="text-sm font-medium text-accent-400">AI-Powered Security</span>
+              <div class="focus-item ai-security">
+                <svg class="w-5 h-5 text-accent-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12,2A2,2 0 0,1 14,4C14,4.74 13.6,5.39 13,5.73V7H14A7,7 0 0,1 21,14H22A1,1 0 0,1 23,15V18A1,1 0 0,1 22,19H21V20A2,2 0 0,1 19,22H5A2,2 0 0,1 3,20V19H2A1,1 0 0,1 1,18V15A1,1 0 0,1 2,14H3A7,7 0 0,1 10,7H11V5.73C10.4,5.39 10,4.74 10,4A2,2 0 0,1 12,2M7.5,13A2.5,2.5 0 0,0 5,15.5A2.5,2.5 0 0,0 7.5,18A2.5,2.5 0 0,0 10,15.5A2.5,2.5 0 0,0 7.5,13M16.5,13A2.5,2.5 0 0,0 14,15.5A2.5,2.5 0 0,0 16.5,18A2.5,2.5 0 0,0 19,15.5A2.5,2.5 0 0,0 16.5,13Z"/>
+                </svg>
+                <span class="text-sm font-medium">AI-Powered Threat Detection</span>
+                <div class="focus-progress"></div>
               </div>
-              <div class="bg-dark-700 rounded-lg p-3 hover:bg-secondary-600 hover:scale-105 transition-all duration-300">
-                <span class="text-sm font-medium text-secondary-400">Cloud Security</span>
+              <div class="focus-item cloud-security">
+                <svg class="w-5 h-5 text-secondary-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M6.5,20Q4.22,20 2.61,18.43Q1,16.85 1,14.58Q1,12.63 2.17,11.1Q3.35,9.57 5.25,9.15Q5.88,6.85 7.75,5.43Q9.63,4 12,4Q14.93,4 16.96,6.04Q19,8.07 19,11Q20.73,11.2 21.86,12.5Q23,13.78 23,15.5A4.5,4.5 0 0,1 18.5,20H6.5Z"/>
+                </svg>
+                <span class="text-sm font-medium">Cloud Security Automation</span>
+                <div class="focus-progress"></div>
               </div>
             </div>
           </div>
@@ -90,3 +139,236 @@
     </div>
   </div>
 </section>
+
+<style>
+  .cyber-section {
+    position: relative;
+  }
+  
+  .cyber-title {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .title-icon {
+    font-size: 2rem;
+    animation: iconScan 3s ease-in-out infinite;
+  }
+  
+  .title-decoration {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff00, transparent);
+    animation: titleScan 2s ease-in-out infinite;
+  }
+  
+  @keyframes iconScan {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(5deg); }
+  }
+  
+  @keyframes titleScan {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+  
+  .cyber-content .cyber-paragraph {
+    position: relative;
+    padding-left: 3rem;
+    margin: 1.5rem 0;
+    border-left: 2px solid rgba(0, 255, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .cyber-paragraph:hover {
+    border-left-color: #00ff00;
+    transform: translateX(8px);
+  }
+  
+  .line-number {
+    position: absolute;
+    left: -2.5rem;
+    top: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #00ff00;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+  }
+  
+  .highlight-keyword {
+    color: #00ffff;
+    font-weight: 600;
+    text-shadow: 0 0 5px currentColor;
+    position: relative;
+  }
+  
+  .highlight-keyword::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+  
+  .cyber-achievements .achievement-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .achievement-item:hover {
+    border-color: #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+    transform: translateX(8px);
+  }
+  
+  .highlight-number {
+    color: #00ff00;
+    font-weight: bold;
+    font-family: 'JetBrains Mono', monospace;
+    text-shadow: 0 0 5px currentColor;
+  }
+  
+  .cyber-timeline {
+    position: relative;
+  }
+  
+  .cyber-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .timeline-container {
+    position: relative;
+  }
+  
+  .timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #00ff00, #00ffff, #0066ff);
+    animation: timelineFlow 3s ease-in-out infinite;
+  }
+  
+  @keyframes timelineFlow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  
+  .timeline-item:hover {
+    transform: translateX(8px);
+  }
+  
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid;
+    background: rgba(0, 0, 0, 0.8);
+    position: relative;
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+  
+  .timeline-dot.senior {
+    border-color: #3b82f6;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  
+  .timeline-dot.analyst {
+    border-color: #06b6d4;
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+  }
+  
+  .timeline-dot.developer {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  }
+  
+  @keyframes dotPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+  
+  .cyber-focus .focus-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .focus-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .focus-item:hover {
+    transform: scale(1.05);
+    border-color: rgba(0, 255, 0, 0.5);
+  }
+  
+  .focus-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00ff00, #00ffff);
+    animation: progressFlow 3s ease-in-out infinite;
+  }
+  
+  .zero-trust .focus-progress {
+    width: 85%;
+    animation-delay: 0s;
+  }
+  
+  .ai-security .focus-progress {
+    width: 70%;
+    animation-delay: 1s;
+  }
+  
+  .cloud-security .focus-progress {
+    width: 90%;
+    animation-delay: 2s;
+  }
+  
+  @keyframes progressFlow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+</style>

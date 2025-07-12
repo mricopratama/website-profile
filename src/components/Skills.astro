@@ -1,6 +1,13 @@
 ---
+// Import ikon yang dibutuhkan dari lucide-react
+import {
+  Swords, Palette, Cog, Shield, Wrench, Microscope,
+  Atom, Box, Code, Container, Cloud, Database, DatabaseZap,
+  BookType, Terminal, Anchor, Network
+} from 'lucide-react';
 import { skills } from '../data/skills';
 
+// Data tidak berubah
 const skillsByCategory = {
   frontend: skills.filter(skill => skill.category === 'frontend'),
   backend: skills.filter(skill => skill.category === 'backend'),
@@ -14,67 +21,102 @@ const categoryColors = {
   security: 'error',
   tools: 'secondary',
 };
+
+// Pemetaan untuk ikon kategori agar kode lebih bersih
+const categoryDetails = {
+  frontend: { name: 'Frontend', Icon: Palette },
+  backend: { name: 'Backend', Icon: Cog },
+  security: { name: 'Security', Icon: Shield },
+  tools: { name: 'Tools & DevOps', Icon: Wrench },
+};
+
+// Definisikan ikon untuk setiap teknologi
+const technologies = [
+  { name: 'React', Icon: Atom, level: 'Expert' },
+  { name: 'Laravel', Icon: Wrench, level: 'Expert' },
+  { name: 'Node.js', Icon: Box, level: 'Advanced' },
+  { name: 'Python', Icon: Code, level: 'Expert' },
+  { name: 'Docker', Icon: Container, level: 'Advanced' },
+  { name: 'AWS', Icon: Cloud, level: 'Advanced' },
+  { name: 'PostgreSQL', Icon: Database, level: 'Expert' },
+  { name: 'Redis', Icon: DatabaseZap, level: 'Advanced' },
+  { name: 'TypeScript', Icon: BookType, level: 'Expert' },
+  { name: 'Linux', Icon: Terminal, level: 'Expert' },
+  { name: 'Kubernetes', Icon: Anchor, level: 'Advanced' },
+  { name: 'GraphQL', Icon: Network, level: 'Advanced' }
+];
+
 ---
 
 <section id="skills" class="py-20">
   <div class="container mx-auto px-6">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-        <span class="gradient-text">Skills & Technologies</span>
+        <span class="gradient-text cyber-skills-title">
+          <Swords className="skills-icon" />
+          <span>Arsenal & Capabilities</span>
+          <span class="skills-scanner"></span>
+        </span>
       </h2>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {Object.entries(skillsByCategory).map(([category, categorySkills], index) => {
           const rotationClasses = [
-            'card-rotate-wobble',
-            'card-rotate-pendulum', 
-            'card-rotate-dance',
-            'card-rotate-wave'
+            'card-rotate-wobble', 'card-rotate-pendulum', 
+            'card-rotate-dance', 'card-rotate-wave'
           ];
           const rotationClass = rotationClasses[index % rotationClasses.length];
           const delayClass = `card-delay-${(index % 4) + 1}`;
-          
+          const details = categoryDetails[category];
+
           return (
-          <div class={`glass-effect rounded-2xl p-6 transition-all duration-500 skill-card-effect group ${rotationClass} ${delayClass}`}>
-            <h3 class="text-xl font-semibold mb-6 text-center capitalize">
-              <span class={`text-${categoryColors[category]}-400`}>
-                {category === 'frontend' ? 'Frontend' : 
-                 category === 'backend' ? 'Backend' : 
-                 category === 'security' ? 'Security' : 
-                 'Tools & DevOps'}
-              </span>
-            </h3>
-            
-            <div class="space-y-4">
-              {categorySkills.map((skill) => (
-                <div class="space-y-2">
-                  <div class="flex justify-between items-center">
-                    <span class="text-sm font-medium text-dark-200">{skill.name}</span>
-                    <span class="text-xs text-dark-400">{skill.level}%</span>
+            <div class={`glass-effect rounded-2xl p-6 transition-all duration-500 skill-card-effect group ${rotationClass} ${delayClass}`}>
+              <h3 class="text-xl font-semibold mb-6 text-center capitalize cyber-category-title">
+                {/* Gunakan komponen Ikon dari pemetaan */}
+                {details && <details.Icon className="category-icon" />}
+                <span class={`text-${categoryColors[category]}-400`}>
+                  {details ? details.name : category}
+                </span>
+                <div class="category-status"></div>
+              </h3>
+              
+              <div class="space-y-4 skills-container">
+                {categorySkills.map((skill) => (
+                  <div class="space-y-2 skill-item">
+                    <div class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-dark-200 skill-name">{skill.name}</span>
+                      <span class="text-xs text-dark-400 skill-percentage">{skill.level}%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-2 skill-bar-container">
+                      <div 
+                        class={`h-2 rounded-full bg-${categoryColors[category]}-500 transition-all duration-700 ease-out skill-bar relative overflow-hidden cyber-skill-bar`}
+                        style={`width: ${skill.level}%`}
+                      >
+                        <div class="skill-bar-glow"></div>
+                        <div class="skill-bar-pulse"></div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="w-full bg-dark-700 rounded-full h-2">
-                    <div 
-                      class={`h-2 rounded-full bg-${categoryColors[category]}-500 transition-all duration-700 ease-out skill-bar relative overflow-hidden`}
-                      style={`width: ${skill.level}%`}
-                    ></div>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        )})}
+          )
+        })}
       </div>
       
-      <!-- Technology Logos -->
       <div class="mt-16">
-        <h3 class="text-2xl font-semibold text-center mb-8 text-dark-300">Technologies I Work With</h3>
-        <div class="flex flex-wrap justify-center gap-6">
-          {[
-            'React', 'Vue.js', 'Laravel', 'Node.js', 'Python', 'Docker', 
-            'AWS', 'PostgreSQL', 'Redis', 'TypeScript', 'Tailwind', 'Linux'
-          ].map((tech) => (
-            <div class="bg-dark-800 hover:bg-dark-700 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 tech-badge">
-              {tech}
+        <h3 class="text-2xl font-semibold text-center mb-8 text-dark-300 cyber-tech-title">
+          <Microscope className="tech-title-icon" />
+          <span>Weaponized Technologies</span>
+          <span class="tech-scanner-line"></span>
+        </h3>
+        <div class="flex flex-wrap justify-center gap-6 tech-arsenal-grid">
+          {technologies.map((tech, index) => (
+            <div class={`tech-badge-advanced tech-badge-${index % 4}`} data-tech={tech.name} data-level={tech.level}>
+              <tech.Icon className="tech-icon" />
+              <span class="tech-name">{tech.name}</span>
+              <span class="tech-level">{tech.level}</span>
+              <div class="tech-radar"></div>
             </div>
           ))}
         </div>
@@ -84,6 +126,272 @@ const categoryColors = {
 </section>
 
 <style>
+  .cyber-skills-title {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .skills-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    animation: weaponSpin 4s linear infinite;
+  }
+  
+  .skills-scanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff0000, #00ff00, #0000ff, transparent);
+    animation: skillsScan 3s ease-in-out infinite;
+  }
+  
+  @keyframes weaponSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes skillsScan {
+    0%, 100% { transform: scaleX(0); opacity: 0; }
+    50% { transform: scaleX(1); opacity: 1; }
+  }
+  
+  .cyber-category-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .category-icon {
+    width: 2rem; 
+    height: 2rem;
+    animation: categoryPulse 2s ease-in-out infinite;
+  }
+  
+  .category-status {
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+    animation: statusScan 2s ease-in-out infinite;
+  }
+  
+  @keyframes categoryPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+  
+  @keyframes statusScan {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+  
+  .skill-item {
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .skill-item:hover {
+    border-color: rgba(0, 255, 0, 0.3);
+    background: rgba(0, 255, 0, 0.05);
+    transform: translateX(4px);
+  }
+  
+  .skill-name {
+    position: relative;
+  }
+  
+  .skill-name::before {
+    content: '▶';
+    position: absolute;
+    left: -1rem;
+    color: #00ff00;
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .skill-item:hover .skill-name::before {
+    opacity: 1;
+  }
+  
+  .skill-percentage {
+    font-family: 'JetBrains Mono', monospace;
+    color: #00ff00;
+    text-shadow: 0 0 5px currentColor;
+  }
+  
+  .cyber-skill-bar {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skill-bar-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: skillGlow 2s ease-in-out infinite;
+  }
+  
+  .skill-bar-pulse {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    animation: skillPulse 1s ease-in-out infinite;
+  }
+  
+  @keyframes skillGlow {
+    0%, 100% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+  }
+  
+  @keyframes skillPulse {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  .cyber-tech-title {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .tech-title-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    animation: techScan 3s ease-in-out infinite;
+  }
+  
+  .tech-scanner-line {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00ff00, transparent);
+    animation: techLineScan 2s ease-in-out infinite;
+  }
+  
+  @keyframes techScan {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(10deg); }
+  }
+  
+  @keyframes techLineScan {
+    0%, 100% { opacity: 0.3; transform: scaleX(0); }
+    50% { opacity: 1; transform: scaleX(1); }
+  }
+  
+  .tech-arsenal-grid {
+    position: relative;
+  }
+  
+  .tech-badge-advanced {
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    border-radius: 12px;
+    padding: 1rem;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .tech-badge-advanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .tech-badge-advanced:hover::before {
+    left: 100%;
+  }
+  
+  .tech-badge-advanced:hover {
+    border-color: #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    transform: translateY(-8px) scale(1.05);
+  }
+  
+  .tech-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    animation: techIconFloat 3s ease-in-out infinite;
+  }
+  
+  .tech-name {
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .tech-level {
+    font-size: 0.7rem;
+    color: #00ff00;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .tech-radar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 1px solid rgba(0, 255, 0, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+  }
+  
+  .tech-badge-advanced:hover .tech-radar {
+    width: 100%;
+    height: 100%;
+    animation: radarScan 2s ease-in-out infinite;
+  }
+  
+  @keyframes techIconFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-4px) rotate(5deg); }
+  }
+  
+  @keyframes radarScan {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(0); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
+  }
+  
+  /* Staggered animations for tech badges */
+  .tech-badge-0 { animation-delay: 0s; }
+  .tech-badge-1 { animation-delay: 0.2s; }
+  .tech-badge-2 { animation-delay: 0.4s; }
+  .tech-badge-3 { animation-delay: 0.6s; }
+  
   .skill-card-effect {
     position: relative;
     animation: skillFloat 7s ease-in-out infinite;
