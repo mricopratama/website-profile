@@ -1,5 +1,5 @@
 // netlify/functions/achievements.js
-import { achievements } from '../data/achievements.js';
+import { achievements } from '../data/achievements.ts';
 
 export const handler = async () => {
   return {

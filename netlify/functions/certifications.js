@@ -1,5 +1,5 @@
 // netlify/functions/certifications.js
-import { certifications } from '../data/certifications';
+import { certifications } from '../data/certifications.ts';
 
 export const handler = async () => {
   return {
