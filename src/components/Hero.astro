@@ -1,4 +1,5 @@
 ---
+import '@fortawesome/fontawesome-free/css/all.min.css';
 ---
 
 <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden animated-background cyber-theme">
@@ -64,7 +65,7 @@
       <!-- Profile Image -->
       <div class="mb-8 breathing">
         <img 
-          src="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=400" 
+          src="/foto_profile.jpg" 
           alt="Profile Picture" 
           class="w-32 h-32 rounded-full mx-auto object-cover ring-4 ring-primary-500/50 shadow-xl hover:ring-8 hover:ring-primary-400/30 transition-all duration-500 cyber-avatar"
         />
@@ -143,15 +144,11 @@
           React
         </span>
         <span class="tech-badge" data-tech="Laravel">
-          <svg class="w-4 h-4 inline-block mr-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
-          </svg>
-          Laravel
+          <i class="fa-brands fa-laravel text-base align-middle"></i>
+          <span class="ml-1">Laravel</span>
         </span>
         <span class="tech-badge" data-tech="Node.js">
-          <svg class="w-4 h-4 inline-block mr-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12,1.85C11.73,1.85 11.45,1.92 11.22,2.05L3.78,6.35C3.32,6.61 3,7.12 3,7.66V16.34C3,16.88 3.32,17.39 3.78,17.65L11.22,21.95C11.45,22.08 11.73,22.15 12,22.15C12.27,22.15 12.55,22.08 12.78,21.95L20.22,17.65C20.68,17.39 21,16.88 21,16.34V7.66C21,7.12 20.68,6.61 20.22,6.35L12.78,2.05C12.55,1.92 12.27,1.85 12,1.85M12,3.5L18.5,7.25V16.75L12,20.5L5.5,16.75V7.25L12,3.5Z"/>
-          </svg>
+          <i class="fa-brands fa-node-js"></i>
           Node.js
         </span>
         <span class="tech-badge" data-tech="Python">
@@ -161,16 +158,8 @@
           Python
         </span>
         <span class="tech-badge" data-tech="Security">
-          <svg class="w-4 h-4 inline-block mr-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11H16V16H8V11H9.2V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.4,8.7 10.4,10V11H13.6V10C13.6,8.7 12.8,8.2 12,8.2Z"/>
-          </svg>
+          <i class="fa-solid fa-user-secret"></i>
           CyberSec
-        </span>
-        <span class="tech-badge" data-tech="DevOps">
-          <svg class="w-4 h-4 inline-block mr-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,6H13V9H16V11H13V14H11V11H8V9H11V6Z"/>
-          </svg>
-          DevOps
         </span>
       </div>
     </div>
@@ -185,12 +174,16 @@
   /* Matrix Rain Effect */
   .matrix-rain {
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='10' y='20' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E01%3C/text%3E%3Ctext x='30' y='40' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E10%3C/text%3E%3Ctext x='50' y='60' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E11%3C/text%3E%3Ctext x='70' y='80' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E00%3C/text%3E%3C/svg%3E");
-    animation: matrixFall 20s linear infinite;
+    animation: matrixFall 2s linear infinite;
   }
   
   @keyframes matrixFall {
-    0% { transform: translateY(-100px); }
-    100% { transform: translateY(100vh); }
+    from {
+      background-position-y: 0;
+    }
+    to {
+      background-position-y: 100px;
+    }
   }
   
   /* Terminal Window */
