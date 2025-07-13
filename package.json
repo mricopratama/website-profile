@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "copy:data": "node -e \"require('fs').cpSync('src/data', 'netlify/functions/data', { recursive: true })\"",
+    "build": "npm run copy:data && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

@@ -4,10 +4,6 @@
   publish = "dist"
   functions = "netlify/functions"
 
-# Pastikan blok ini ada dan benar
-[functions]
-  included_files = ["src/data/**"]
-
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
