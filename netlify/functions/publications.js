@@ -1,5 +1,5 @@
 // netlify/functions/publications.js
-import { publications } from '../data/publications.ts';
+import { publications } from '../../src/data/publications.js';
 
 export const handler = async () => {
   return {

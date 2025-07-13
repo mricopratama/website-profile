@@ -4,10 +4,8 @@
   publish = "dist"
   functions = "netlify/functions"
 
-# 👇 TAMBAHKAN BLOK INI
+# Pastikan blok ini ada dan benar
 [functions]
-  # Memberitahu Netlify untuk menyertakan semua file dari src/data
-  # saat men-deploy functions.
   included_files = ["src/data/**"]
 
 [[redirects]]
