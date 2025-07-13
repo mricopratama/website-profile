@@ -1,12 +1,15 @@
 # netlify.toml
 
 [build]
-  # Direktori tempat Astro meletakkan hasil build
   publish = "dist"
-  # Direktori tempat Netlify akan mencari functions
   functions = "netlify/functions"
 
-# Aturan "rewrite" untuk membuat URL API lebih cantik
+# 👇 TAMBAHKAN BLOK INI
+[functions]
+  # Memberitahu Netlify untuk menyertakan semua file dari src/data
+  # saat men-deploy functions.
+  included_files = ["src/data/**"]
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
