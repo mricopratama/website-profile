@@ -2,111 +2,108 @@ import type { Project } from '../types';
 
 export const projects: Project[] = [
   {
-    id: 'secure-banking-app',
-    title: 'Secure Banking Application',
-    description: 'Full-stack banking application with advanced security features including biometric authentication, real-time fraud detection, and encrypted transactions.',
-    longDescription: 'This comprehensive banking application showcases modern security practices in fintech. Built with React and Node.js, it features end-to-end encryption, multi-factor authentication, and real-time fraud detection using machine learning algorithms.',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'JWT', 'Biometric API', 'ML Models'],
+    id: 'dimsum-date',
+    title: 'Web Profile Dimsum Date',
+    description: 'Website profil perusahaan untuk bisnis kuliner Dimsum Date, menampilkan menu, galeri, informasi kontak, dan lokasi.',
+    longDescription: 'Sebagai Full-Stack Developer, saya membangun website profil ini dari awal menggunakan Laravel untuk backend dan manajemen data, serta Tailwind CSS untuk antarmuka yang responsif dan modern. Proyek ini dilengkapi dengan panel admin yang dibuat menggunakan Filament, memungkinkan pemilik untuk dengan mudah mengelola konten website seperti menu, promo, dan informasi bisnis lainnya secara mandiri.',
+    technologies: ['Laravel', 'PHP', 'Livewire', 'Tailwind', 'MySQL', 'Filament'],
     images: [
-      'https://images.pexels.com/photos/5849573/pexels-photo-5849573.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/5849593/pexels-photo-5849593.jpeg?auto=compress&cs=tinysrgb&w=800'
+      '/logo-dimsum.svg'
     ],
-    demoUrl: 'https://secure-banking-demo.com',
-    githubUrl: 'https://github.com/username/secure-banking-app',
-    category: 'security',
+    demoUrl: 'https://dimsumdate.com',
+    githubUrl: 'https://github.com/padiw123/Web-Profile-Dimsum-Date',
+    category: 'web',
     featured: true,
-    completedAt: '2024-10-15',
+    completedAt: '2025-07-14',
     challenges: [
-      'Implementing real-time fraud detection without affecting performance',
-      'Ensuring PCI DSS compliance across all system components',
-      'Designing intuitive UX for complex security workflows'
+      'Membuat panel admin yang intuitif untuk klien non-teknis',
+      'Mengoptimalkan gambar menu untuk loading cepat tanpa kehilangan kualitas',
+      'Merancang desain yang menarik dan sesuai dengan branding Dimsum Date'
     ],
     solutions: [
-      'Developed asynchronous ML pipeline for fraud detection',
-      'Implemented comprehensive audit logging and encryption',
-      'Created progressive disclosure UI patterns for security features'
+      'Menggunakan Filament untuk membangun panel admin yang cepat dan user-friendly',
+      'Menerapkan teknik kompresi gambar dan lazy loading',
+      'Berkolaborasi dengan desainer untuk mengimplementasikan UI/UX yang modern'
     ],
-    role: 'Full-Stack Developer & Security Architect'
+    role: 'Full-Stack Developer'
   },
   {
-    id: 'ai-threat-detection',
-    title: 'AI-Powered Threat Detection System',
-    description: 'Machine learning system that analyzes network traffic patterns to identify and prevent cyber threats in real-time.',
-    longDescription: 'An advanced cybersecurity solution that uses artificial intelligence to detect anomalies and potential threats in network traffic. The system processes millions of data points per second to identify suspicious patterns and automatically trigger defensive measures.',
-    technologies: ['Python', 'TensorFlow', 'FastAPI', 'Docker', 'Kubernetes', 'ELK Stack', 'Apache Kafka'],
+    id: 'visual-novel-sdgs12',
+    title: 'Konsumsi dan Produksi yang Bertanggung Jawab',
+    description: 'Visual novel edukatif bertema SDG-12 yang bertujuan meningkatkan kesadaran tentang pentingnya konsumsi dan produksi yang bertanggung jawab.',
+    longDescription: 'Dalam proyek ini, saya berperan sebagai Technical Artist. Tanggung jawab saya meliputi integrasi aset visual (karakter, latar belakang) ke dalam engine Ren\'Py, membuat script untuk alur cerita interaktif, serta menambahkan animasi dan efek visual sederhana untuk meningkatkan pengalaman pemain. Proyek ini menggabungkan narasi dan elemen visual untuk menyampaikan pesan edukatif secara efektif.',
+    technologies: ['Python', 'Ren Py', 'Photoshop', 'Audacity', 'Adobe Express'],
     images: [
-      'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800'
+      '/circular_economy_diagram.png'
     ],
-    demoUrl: 'https://ai-threat-detection-demo.com',
-    githubUrl: 'https://github.com/username/ai-threat-detection',
-    category: 'security',
+    demoUrl: '#',
+    githubUrl: 'https://github.com/mricopratama/Tekmul-Tema-Sampah',
+    category: 'multimedia',
     featured: true,
-    completedAt: '2024-09-22',
+    completedAt: '2025-07-09',
     challenges: [
-      'Processing high-volume network data in real-time',
-      'Minimizing false positives while maintaining high detection accuracy',
-      'Scaling the system to handle enterprise-level traffic'
+      'Mengadaptasi cerita linear menjadi narasi interaktif dengan cabang',
+      'Mengoptimalkan aset visual agar berjalan lancar di berbagai perangkat',
+      'Menerjemahkan konsep abstrak SDG-12 menjadi alur cerita yang menarik'
     ],
     solutions: [
-      'Implemented distributed processing with Apache Kafka',
-      'Fine-tuned ML models using transfer learning techniques',
-      'Designed microservices architecture for horizontal scaling'
+      'Menggunakan sistem state dan flag dalam Ren\'Py untuk mengelola pilihan pemain',
+      'Melakukan proses kompresi dan penyesuaian resolusi pada semua aset visual',
+      'Merancang dialog dan skenario yang relevan dengan kehidupan sehari-hari'
     ],
-    role: 'ML Engineer & Security Specialist'
+    role: 'Technical Artist'
   },
   {
-    id: 'modern-ecommerce-platform',
-    title: 'Modern E-commerce Platform',
-    description: 'Scalable e-commerce solution with microservices architecture, real-time inventory management, and advanced analytics.',
-    longDescription: 'A comprehensive e-commerce platform built with modern technologies and best practices. Features include real-time inventory management, personalized recommendations, multi-payment integration, and comprehensive admin dashboard with advanced analytics.',
-    technologies: ['Vue.js', 'Laravel', 'MySQL', 'Redis', 'Stripe API', 'AWS S3', 'Docker'],
+    id: 'enterprise-resources-planning',
+    title: 'Enterprise Resources Planning',
+    description: 'Sistem ERP berbasis web yang dirancang untuk membantu perusahaan mengelola proses bisnis inti seperti inventaris, penjualan, dan sumber daya manusia.',
+    longDescription: 'Sebagai Backend Developer, saya berfokus pada pengembangan logika bisnis inti dan arsitektur database. Saya membangun modul-modul utama menggunakan Laravel, merancang skema database di MySQL, dan membuat REST API untuk komunikasi antara backend dan frontend. Sistem ini menggunakan template AdminLTE untuk dashboard admin yang fungsional dan mudah digunakan.',
+    technologies: ['Laravel', 'PHP', 'MySQL', 'AdminLTE', 'REST API', 'Git'],
     images: [
       'https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=800',
       'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=800'
     ],
-    demoUrl: 'https://modern-ecommerce-demo.com',
-    githubUrl: 'https://github.com/username/modern-ecommerce',
+    demoUrl: '#',
+    githubUrl: 'https://github.com/ardiansyah-sweng/erp_rpl',
     category: 'web',
-    featured: true,
-    completedAt: '2024-08-30',
+    featured: false,
+    completedAt: '2025-07-30',
     challenges: [
-      'Handling high concurrent user traffic during peak sales',
-      'Implementing real-time inventory synchronization',
-      'Creating responsive design for all device types'
+      'Merancang struktur database yang scalable untuk modul yang kompleks',
+      'Memastikan keamanan data dan otorisasi user berdasarkan peran',
+      'Mengelola proses bisnis yang rumit menjadi alur kerja yang logis di dalam sistem'
     ],
     solutions: [
-      'Implemented caching strategies and load balancing',
-      'Developed event-driven architecture for inventory management',
-      'Used CSS Grid and Flexbox for responsive layouts'
+      'Menerapkan normalisasi database dan relasi yang efisien',
+      'Mengimplementasikan sistem otentikasi dan otorisasi berbasis-peran (Role-Based Access Control) dari Laravel',
+      'Menggunakan pendekatan modular untuk setiap fitur bisnis'
     ],
-    role: 'Full-Stack Developer & DevOps Engineer'
+    role: 'Backend Developer'
   },
   {
-    id: 'blockchain-voting-system',
-    title: 'Blockchain Voting System',
-    description: 'Secure and transparent voting platform using blockchain technology to ensure election integrity and voter privacy.',
-    longDescription: 'A revolutionary voting system that leverages blockchain technology to create tamper-proof elections. The platform ensures complete transparency while maintaining voter anonymity through advanced cryptographic techniques.',
-    technologies: ['Solidity', 'React', 'Web3.js', 'Node.js', 'IPFS', 'Ethereum', 'MetaMask'],
+    id: 'self-webs-profile',
+    title: 'My Web Profile',
+    description: 'Website portofolio pribadi yang cepat dan responsif, dibangun untuk menampilkan proyek, keahlian, dan pengalaman profesional saya.',
+    longDescription: 'Website ini dikembangkan menggunakan Astro untuk performa yang optimal dan pengalaman Browse yang mulus, dengan arsitektur "islands" untuk meminimalkan jejak JavaScript. Saya menggunakan TypeScript untuk memastikan kualitas kode yang tinggi dan type safety, serta Tailwind CSS untuk membangun desain yang modern dan sepenuhnya responsif. Proyek ini berfungsi sebagai pusat profil online saya.',
+    technologies: ['Astro', 'Typescript', 'Tailwind', 'React', 'Netlify'],
     images: [
-      'https://images.pexels.com/photos/6953876/pexels-photo-6953876.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/6953862/pexels-photo-6953862.jpeg?auto=compress&cs=tinysrgb&w=800'
+      '/icon-logo.svg',
     ],
-    demoUrl: 'https://blockchain-voting-demo.com',
-    githubUrl: 'https://github.com/username/blockchain-voting',
-    category: 'security',
-    featured: false,
-    completedAt: '2024-07-18',
+    demoUrl: 'https://mricopratama.netlify.app',
+    githubUrl: 'https://github.com/mricopratama/website-profile',
+    category: 'web',
+    featured: true,
+    completedAt: '2026-08-03',
     challenges: [
-      'Ensuring voter privacy while maintaining transparency',
-      'Optimizing gas costs for mass adoption',
-      'Creating intuitive interface for non-technical users'
+      'Mengimplementasikan desain yang unik dan personal',
+      'Memastikan skor performa (Lighthouse) yang tinggi',
+      'Menstrukturkan konten agar mudah dinavigasi dan informatif'
     ],
     solutions: [
-      'Implemented zero-knowledge proofs for privacy',
-      'Optimized smart contract code for gas efficiency',
-      'Designed progressive web app with offline capabilities'
+      'Menggunakan Tailwind CSS untuk kustomisasi desain yang mendalam',
+      'Memanfaatkan fitur static site generation dari Astro untuk kecepatan loading maksimal',
+      'Merancang arsitektur informasi yang jelas dan ringkas'
     ],
-    role: 'Blockchain Developer & Security Architect'
+    role: 'Full-Stack Developer'
   }
 ];
