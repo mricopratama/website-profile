@@ -2,106 +2,93 @@ import type { Achievement } from '../types';
 
 export const achievements: Achievement[] = [
   {
-    id: 'security-researcher-award',
-    title: 'Outstanding Security Researcher Award 2023',
-    description: 'Recognized for discovering and responsibly disclosing critical vulnerabilities in major web applications, contributing to improved cybersecurity standards.',
-    date: '2023-12-01',
-    category: 'award',
-    organization: 'International Cybersecurity Research Foundation',
+    id: 'seminar-cybersmart-campus-2025',
+    title: 'Seminar: Tech Power Up: Cybersmart Campus',
+    description: 'Engaged in the "Tech Power Up: Cybersmart Campus" seminar, exploring the intersection of technology and cybersecurity to foster a safer digital campus environment.',
+    date: '2025-02-20', // Tanggal diasumsikan
+    category: 'seminar',
+    organization: 'Campus Technology Initiative', // Penyelenggara diasumsikan
     details: [
-      'Discovered 15+ critical vulnerabilities in Fortune 500 companies',
-      'Contributed to security improvements affecting millions of users',
-      'Received recognition from major tech companies for responsible disclosure',
-      'Published security research that influenced industry best practices'
+      'Focused on the application of cyber technology in a campus setting.',
+      'Discussed methods for creating a secure digital campus ecosystem.',
+      'Gained insights into cybersecurity challenges in the education sector.'
     ],
-    featured: true,
-    image: 'https://images.pexels.com/photos/5849573/pexels-photo-5849573.jpeg?auto=compress&cs=tinysrgb&w=400',
-    link: 'https://example.com/security-award'
+    featured: false,
+    image: 'https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
-    id: 'hackathon-winner',
-    title: 'Global Cybersecurity Hackathon - First Place',
-    description: 'Led a team to victory in the international cybersecurity hackathon, developing an AI-powered threat detection system in 48 hours.',
-    date: '2023-09-15',
+    id: 'ganesha-championship-2024',
+    title: 'Juara 1 Under 54 Kg - Kejuaraan Nasional Ganesha',
+    description: 'Secured the first place gold medal in the Under 54 Kg Kyorugi category at the Ganesha National Taekwondo Championship 2024.',
+    date: '2024-07-15', // Tanggal diasumsikan
     category: 'competition',
-    organization: 'CyberSec Global',
+    organization: 'Panitia Kejurnas Ganesha',
     details: [
-      'Competed against 200+ teams from 50+ countries',
-      'Developed innovative AI-powered threat detection solution',
-      'Implemented real-time network monitoring capabilities',
-      'Achieved 99.7% accuracy in threat identification',
-      'Won $50,000 prize and mentorship program'
+      'Won the gold medal in the Kyorugi Under 54 Kg category.',
+      'Competed against top national-level taekwondo athletes.',
+      'Showcased peak performance and technique in a prestigious tournament.'
     ],
     featured: true,
-    image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400',
-    link: 'https://example.com/hackathon-winner'
+    image: 'https://images.pexels.com/photos/704555/pexels-photo-704555.jpeg?auto=compress&cs=tinysrgb&w=400',
   },
   {
-    id: 'open-source-contributor',
-    title: 'Top Open Source Contributor 2023',
-    description: 'Recognized as one of the top contributors to cybersecurity and web development open source projects, with over 500 commits and 50+ merged PRs.',
-    date: '2023-11-30',
-    category: 'recognition',
-    organization: 'GitHub',
+    id: 'seminar-data-security-2024',
+    title: 'Seminar: Data Security, Access Management, and Authentication',
+    description: 'Participated in a comprehensive seminar focusing on critical aspects of data security, including access control and modern authentication systems.',
+    date: '2024-03-10', // Tanggal diasumsikan
+    category: 'seminar',
+    organization: 'Data Security Professionals Forum', // Penyelenggara diasumsikan
     details: [
-      'Contributed to 25+ major open source projects',
-      'Maintained 3 popular security tools with 10K+ stars',
-      'Mentored 50+ new contributors in the community',
-      'Organized virtual meetups and workshops',
-      'Featured in GitHub\'s annual report'
-    ],
-    featured: true,
-    image: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=400',
-    link: 'https://github.com/username'
-  },
-  {
-    id: 'speaker-conference',
-    title: 'Keynote Speaker - DevSecOps Summit 2023',
-    description: 'Delivered keynote presentation on "The Future of Application Security" to an audience of 2000+ security professionals and developers.',
-    date: '2023-10-20',
-    category: 'recognition',
-    organization: 'DevSecOps Foundation',
-    details: [
-      'Presented to 2000+ industry professionals',
-      'Shared insights on emerging security threats',
-      'Discussed integration of AI in cybersecurity',
-      'Received standing ovation and 4.9/5 rating',
-      'Presentation viewed 50K+ times online'
-    ],
-    featured: false,
-    image: 'https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=400',
-    link: 'https://example.com/devsecops-keynote'
-  },
-  {
-    id: 'million-users-milestone',
-    title: 'Applications Serving 1M+ Users',
-    description: 'Successfully architected and deployed applications that collectively serve over 1 million active users with 99.9% uptime.',
-    date: '2023-08-01',
-    category: 'milestone',
-    details: [
-      'Built scalable applications serving 1M+ users',
-      'Maintained 99.9% uptime across all applications',
-      'Implemented robust security measures',
-      'Optimized performance for global user base',
-      'Zero major security incidents reported'
-    ],
-    featured: false,
-    image: 'https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=400'
-  },
-  {
-    id: 'security-audit-excellence',
-    title: 'Excellence in Security Auditing',
-    description: 'Completed 100+ security audits with zero false positives and identified critical vulnerabilities that prevented potential breaches.',
-    date: '2023-07-15',
-    category: 'milestone',
-    details: [
-      'Conducted 100+ comprehensive security audits',
-      'Achieved zero false positive rate',
-      'Prevented 15+ potential security breaches',
-      'Saved clients over $2M in potential damages',
-      'Developed custom security testing frameworks'
+      'Explored advanced topics in data protection and authentication.',
+      'Learned industry best practices for secure access management.',
+      'Updated knowledge on the latest cybersecurity threats and mitigation strategies.'
     ],
     featured: false,
     image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=400'
+  },
+  {
+    id: 'danrem-championship-2023',
+    title: 'Juara 1 Under 54 Kg - Kejuaraan Nasional DANREM 052/Wijayakrama',
+    description: 'Achieved first place in the Under 54 Kg class at the DANREM 052/Wijayakrama National Taekwondo Championship.',
+    date: '2023-11-20', // Tanggal diasumsikan
+    category: 'competition',
+    organization: 'KOREM 052/Wijayakrama',
+    details: [
+      'Secured the gold medal in the Under 54 Kg weight class.',
+      'The competition was organized by the Military Resort Command 052/Wijayakrama.',
+      'Outperformed competitors from various provinces across Indonesia.'
+    ],
+    featured: true,
+    image: 'https://images.pexels.com/photos/864940/pexels-photo-864940.jpeg?auto=compress&cs=tinysrgb&w=400'
+  },
+  {
+    id: 'everest-championship-2023',
+    title: 'Juara 2 Under 54 Kg - Everest Taekwondo Championship Piala Kemenpora',
+    description: 'Won the silver medal in the Under 54 Kg category at the prestigious Everest Taekwondo Championship, competing for the Kemenpora Cup.',
+    date: '2023-08-15', // Tanggal diasumsikan
+    category: 'competition',
+    organization: 'Kemenpora RI',
+    details: [
+      'Achieved a silver medal in a national-level event.',
+      'Competed for the rotating trophy from the Minister of Youth and Sports.',
+      'Demonstrated high-level endurance and advanced techniques against strong opponents.'
+    ],
+    featured: false,
+    image: 'https://images.pexels.com/photos/4761793/pexels-photo-4761793.jpeg?auto=compress&cs=tinysrgb&w=400',
+  },
+  {
+    id: 'bhayangkara-presisi-2023',
+    title: 'Juara 3 Under 54 Kg - Bhayangkara Presisi Piala Bergilir Kapolda DIY',
+    description: 'Secured a bronze medal in the U-54 Kg category at the Bhayangkara Presisi Championship for the Kapolda DIY\'s rotating trophy.',
+    date: '2023-05-25', // Tanggal diasumsikan
+    category: 'competition',
+    organization: 'Polda DIY',
+    details: [
+      'Earned a bronze medal in the competitive Under 54 Kg category.',
+      'The event was hosted by the Special Region of Yogyakarta Regional Police.',
+      'Fiercely competed for the prestigious Kapolda\'s rotating trophy.'
+    ],
+    featured: false,
+    image: 'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=400'
   }
 ];

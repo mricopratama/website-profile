@@ -37,7 +37,7 @@ export const certifications: Certification[] = [
     category: 'cloud',
     description: 'Belajar membuat RESTful API, dari HTTP server, routing, hingga membangun aplikasi Back-End dengan Google Cloud menggunakan Compute Engine.',
     skills: ['Back-End Development', 'RESTful API', 'Google Cloud Platform', 'Node.js', 'Compute Engine'],
-    featured: false,
+    featured: true,
     logo: '/logo-dicoding.jpeg'
   },
   {
