@@ -14,12 +14,11 @@ const featuredCertifications = certifications.filter(cert => cert.featured);
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {featuredCertifications.map((cert, index) => {
           const rotationClasses = [
-            'card-rotate-orbit',
-            'card-rotate-flip', 
-            'card-rotate-continuous',
             'card-rotate-dance',
-            'card-rotate-wave',
-            'card-rotate-twist'
+            'card-rotate-wave', 
+            'card-rotate-wobble',
+            'card-rotate-spiral',
+            'card-rotate-pendulum'
           ];
           const rotationClass = rotationClasses[index % rotationClasses.length];
           const delayClass = `card-delay-${(index % 9) + 1}`;

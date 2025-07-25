@@ -14,12 +14,11 @@ const featuredProjects = projects.filter(project => project.featured);
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {featuredProjects.map((project, index) => {
           const rotationClasses = [
-            'card-rotate-continuous',
-            'card-rotate-wobble', 
-            'card-rotate-orbit',
-            'card-rotate-flip',
-            'card-rotate-pendulum',
-            'card-rotate-spiral'
+            'card-rotate-dance',
+            'card-rotate-wave', 
+            'card-rotate-wobble',
+            'card-rotate-spiral',
+            'card-rotate-pendulum'
           ];
           const rotationClass = rotationClasses[index % rotationClasses.length];
           const delayClass = `card-delay-${(index % 9) + 1}`;
