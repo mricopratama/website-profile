@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import netlify from '@astrojs/netlify';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 
@@ -10,4 +11,5 @@ export default defineConfig({
     port: 4321,
   },
   output: 'server',
+  adapter: netlify(),
 });
