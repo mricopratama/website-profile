@@ -11,7 +11,13 @@ export async function getStaticPaths() {
   }));
 }
 
-const { project } = Astro.props;
+const { id } = Astro.params;
+const project = projects.find(p => String(p.id) === id);
+
+if (!project) {
+  return Astro.redirect('/404');
+}
+
 ---
 
 <Layout 
@@ -23,7 +29,6 @@ const { project } = Astro.props;
   <main class="pt-24 pb-20">
     <div class="container mx-auto px-6">
       <div class="max-w-4xl mx-auto">
-        <!-- Back Button -->
         <div class="mb-8">
           <a 
             href="/projects" 
@@ -36,7 +41,6 @@ const { project } = Astro.props;
           </a>
         </div>
         
-        <!-- Project Header -->
         <div class="mb-12">
           <div class="flex items-center gap-4 mb-4">
             <span class={`px-3 py-1 rounded-full text-sm font-medium ${
@@ -93,7 +97,6 @@ const { project } = Astro.props;
           </div>
         </div>
         
-        <!-- Project Images -->
         <div class="mb-12">
           <div class="grid md:grid-cols-2 gap-6">
             {project.images.map((image, index) => (
@@ -108,9 +111,7 @@ const { project } = Astro.props;
           </div>
         </div>
         
-        <!-- Project Details -->
         <div class="grid md:grid-cols-2 gap-12 mb-12">
-          <!-- Project Info -->
           <div class="space-y-8">
             <div class="glass-effect rounded-2xl p-6">
               <h3 class="text-xl font-semibold mb-4">Project Details</h3>
@@ -148,7 +149,6 @@ const { project } = Astro.props;
             </div>
           </div>
           
-          <!-- Challenges & Solutions -->
           <div class="space-y-8">
             <div class="glass-effect rounded-2xl p-6">
               <h3 class="text-xl font-semibold mb-4">Key Challenges</h3>
@@ -176,7 +176,6 @@ const { project } = Astro.props;
           </div>
         </div>
         
-        <!-- Related Projects -->
         <div class="glass-effect rounded-2xl p-8">
           <h3 class="text-2xl font-semibold mb-6 text-center">More Projects</h3>
           <div class="grid md:grid-cols-2 gap-6">

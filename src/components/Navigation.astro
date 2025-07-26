@@ -290,14 +290,18 @@
 </style>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // --- Variabel Elemen ---
     const nav = document.querySelector('nav');
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const allNavLinks = document.querySelectorAll('#navbar .nav-link, #navbar .group a[href]');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-    
+    const sections = document.querySelectorAll('section[id]');
+
     let isMenuOpen = false;
-    
+
+    // --- Efek Gulir Navbar ---
     window.addEventListener('scroll', function() {
       if (window.scrollY > 50) {
         nav.classList.add('navbar-scrolled');
@@ -305,109 +309,103 @@
         nav.classList.remove('navbar-scrolled');
       }
     });
-    
+
+    // --- Menu Mobile ---
     function toggleMobileMenu() {
       isMenuOpen = !isMenuOpen;
-      
-      if (isMenuOpen) {
-        mobileMenuButton.classList.add('menu-open');
-        mobileMenu.classList.add('mobile-menu-open');
-        mobileMenuOverlay.classList.add('mobile-overlay-visible');
-        document.body.style.overflow = 'hidden';
-      } else {
-        mobileMenuButton.classList.remove('menu-open');
-        mobileMenu.classList.remove('mobile-menu-open');
-        mobileMenuOverlay.classList.remove('mobile-overlay-visible');
-        document.body.style.overflow = '';
-      }
+      mobileMenuButton.classList.toggle('menu-open', isMenuOpen);
+      mobileMenu.classList.toggle('mobile-menu-open', isMenuOpen);
+      mobileMenuOverlay.classList.toggle('mobile-overlay-visible', isMenuOpen);
+      document.body.style.overflow = isMenuOpen ? 'hidden' : '';
     }
-    
+
     mobileMenuButton.addEventListener('click', toggleMobileMenu);
     mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
-    
     mobileNavLinks.forEach(link => {
       link.addEventListener('click', () => {
-        if (isMenuOpen) {
-          toggleMobileMenu();
-        }
+        if (isMenuOpen) toggleMobileMenu();
       });
     });
-    
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && isMenuOpen) {
-        toggleMobileMenu();
-      }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && isMenuOpen) toggleMobileMenu();
     });
-    
-    window.addEventListener('resize', function() {
-      if (window.innerWidth >= 1024 && isMenuOpen) {
-        toggleMobileMenu();
-      }
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024 && isMenuOpen) toggleMobileMenu();
     });
-    
+
+    // --- Navigasi Lintas Halaman & Smooth Scroll ---
     document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const href = this.getAttribute('href');
-            const targetId = href.substring(href.indexOf('#'));
-            const target = document.querySelector(targetId);
+      anchor.addEventListener('click', function(e) {
+        const currentPath = window.location.pathname;
+        const href = this.getAttribute('href');
 
-            if (target) {
-                if (isMenuOpen) {
-                    toggleMobileMenu();
-                }
-                
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            } else if (href === '/') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        });
+        if (currentPath === '/') {
+          e.preventDefault();
+          const targetId = href.substring(2);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
     });
 
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link[href^="/#"]');
-    
-    function highlightActiveSection() {
-      let current = '';
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 150) {
-          current = section.getAttribute('id');
-        }
-      });
-      
-      if (window.scrollY < sections[0]?.offsetTop - 150) {
-        current = ''; 
-      }
+    // --- Penanda Link Aktif ---
+    function highlightActiveLink() {
+      const currentPath = window.location.pathname;
 
-      navLinks.forEach(link => {
+      // 1. Reset semua link
+      allNavLinks.forEach(link => {
         link.classList.remove('text-primary-400', 'active');
-        link.classList.add('text-dark-300');
-        
-        const linkHref = link.getAttribute('href');
-        if (linkHref === `/#${current}`) {
-          link.classList.remove('text-dark-300');
-          link.classList.add('text-primary-400', 'active');
+        if (!link.matches('button')) {
+          link.classList.add('text-dark-300');
         }
       });
 
-      const homeLink = document.querySelector('.nav-link[href="/"]');
-      if (homeLink) {
-        if (current === '') {
-          homeLink.classList.remove('text-dark-300');
-          homeLink.classList.add('text-primary-400', 'active');
+      // 2. Jika kita di halaman utama, jalankan logika scroll-spy
+      if (currentPath === '/') {
+        let currentSectionId = '';
+        sections.forEach(section => {
+          if (window.scrollY >= section.offsetTop - 150) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        const activeSectionLink = document.querySelector(`.nav-link[href="/#${currentSectionId}"]`);
+        if (activeSectionLink) {
+          activeSectionLink.classList.remove('text-dark-300');
+          activeSectionLink.classList.add('text-primary-400', 'active');
         } else {
-          homeLink.classList.remove('text-primary-400', 'active');
-          homeLink.classList.add('text-dark-300');
+          const homeLink = document.querySelector('.nav-link[href="/"]');
+          if (homeLink) {
+            homeLink.classList.remove('text-dark-300');
+            homeLink.classList.add('text-primary-400', 'active');
+          }
+        }
+      } 
+      // 3. Jika kita di halaman lain, cari link yang cocok
+      else {
+        let linkToActivate = null;
+
+        // --- PENAMBAHAN KASUS KHUSUS UNTUK ARTIKEL ---
+        // Jika URL saat ini diawali dengan '/articles', maka aktifkan menu 'Articles'.
+        if (currentPath.startsWith('/articles')) {
+          linkToActivate = document.querySelector('#navbar a[href="/#articles"]');
+        }
+        // Logika umum untuk halaman lain seperti /certifications
+        else {
+          linkToActivate = document.querySelector(`#navbar a[href="${currentPath}"]`);
+        }
+
+        // Terapkan kelas aktif jika link ditemukan
+        if (linkToActivate) {
+          linkToActivate.classList.remove('text-dark-300');
+          linkToActivate.classList.add('text-primary-400', 'active');
         }
       }
     }
-    
-    window.addEventListener('scroll', highlightActiveSection);
-    highlightActiveSection();
+
+    window.addEventListener('scroll', highlightActiveLink);
+    highlightActiveLink(); // Panggil saat memuat halaman
   });
 </script>

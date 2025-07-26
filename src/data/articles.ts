@@ -293,7 +293,7 @@ Building scalable APIs requires careful attention to performance, architecture, 
     readingTime: 10,
     tags: ['laravel', 'api', 'scalability', 'performance'],
     category: 'development',
-    featured: false,
+    featured: true,
     image: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=800'
   }
 ];

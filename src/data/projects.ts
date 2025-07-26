@@ -36,7 +36,7 @@ export const projects: Project[] = [
     images: [
       '/circular_economy_diagram.png'
     ],
-    demoUrl: '#',
+    demoUrl: 'https://youtu.be/yIp6PruS_Sg?si=-K_77Yx4wSkC4hVt',
     githubUrl: 'https://github.com/mricopratama/Tekmul-Tema-Sampah',
     category: 'multimedia',
     featured: true,
