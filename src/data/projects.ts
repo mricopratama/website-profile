@@ -2,6 +2,32 @@ import type { Project } from '../types';
 
 export const projects: Project[] = [
   {
+    id: 'cine-finder',
+    title: 'Cine-Finder',
+    description: 'Aplikasi pencarian film yang memungkinkan pengguna menemukan informasi detail tentang film, termasuk sinopsis, rating, dan pemeran.',
+    longDescription: 'Cine-Finder adalah aplikasi web front-end yang saya bangun untuk melatih kemampuan dalam mengonsumsi REST API. Aplikasi ini terhubung ke The Movie Database (TMDb) API untuk mengambil data film secara real-time. Pengguna dapat mencari film berdasarkan judul, melihat film yang sedang populer, dan mendapatkan detail lengkap untuk setiap film. Proyek ini dibangun untuk memperdalam pemahaman dasar pengembangan web front-end.',
+    technologies: ['JavaScript', 'HTML', 'CSS', 'REST API', 'TMDb API', 'Netlify', 'React'],
+    images: [
+      '/film-icon.svg'
+    ],
+    demoUrl: 'https://findermov.netlify.app',
+    githubUrl: 'https://github.com/mricopratama/cine-finder',
+    category: 'web',
+    featured: true,
+    completedAt: '2025-07-28',
+    challenges: [
+      'Mengelola state aplikasi secara efisien tanpa menggunakan framework.',
+      'Membuat tata letak galeri film yang sepenuhnya responsif.',
+      'Menangani asynchronous request ke API dengan bersih dan benar.'
+    ],
+    solutions: [
+      'Menggunakan arsitektur berbasis komponen dengan modul JavaScript.',
+      'Memanfaatkan CSS Grid dan Flexbox untuk desain yang adaptif.',
+      'Mengimplementasikan async/await dengan Fetch API untuk request yang mudah dibaca.'
+    ],
+    role: 'Front-End Developer'
+  },
+  {
     id: 'dimsum-date',
     title: 'Web Profile Dimsum Date',
     description: 'Website profil perusahaan untuk bisnis kuliner Dimsum Date, menampilkan menu, galeri, informasi kontak, dan lokasi.',
@@ -39,7 +65,7 @@ export const projects: Project[] = [
     demoUrl: 'https://youtu.be/yIp6PruS_Sg?si=-K_77Yx4wSkC4hVt',
     githubUrl: 'https://github.com/mricopratama/Tekmul-Tema-Sampah',
     category: 'multimedia',
-    featured: true,
+    featured: false,
     completedAt: '2025-07-09',
     challenges: [
       'Mengadaptasi cerita linear menjadi narasi interaktif dengan cabang',

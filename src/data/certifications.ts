@@ -2,6 +2,19 @@ import type { Certification } from '../types';
 
 export const certifications: Certification[] = [
   {
+    id: 'cisco-intro-cybersecurity',
+    name: 'Introduction to Cybersecurity',
+    issuer: 'Cisco Networking Academy',
+    issuedDate: '2025-07-27',
+    credentialId: '5d63a421-f4c4-46d5-98ad-1df2f857ab3f',
+    credentialUrl: 'https://www.credly.com/badges/5d63a421-f4c4-46d5-98ad-1df2f857ab3f',
+    category: 'security',
+    description: 'Learn cybersecurity basics to protect your personal digital life and gain insights into the biggest security challenges companies, governments, and educational institutions face today. Cybersecurity professionals who can protect and defend an organization’s network are in high demand.',
+    skills: ['Cybersecurity', 'Cyber Best Practices', 'Network Vulnerabilities', 'Threat Detection', 'Privary and Data Confidentiality'],
+    featured: true,
+    logo: '/logo-cisco.png'
+  },
+  {
     id: 'dicoding-aws-cloud-gen-ai',
     name: 'Belajar Dasar Cloud dan Gen AI di AWS',
     issuer: 'Dicoding',
