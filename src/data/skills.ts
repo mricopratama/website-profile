@@ -32,4 +32,11 @@ export const skills: Skill[] = [
   { name: 'Linux', level: 90, category: 'tools' },
   { name: 'Nginx', level: 85, category: 'tools' },
   { name: 'Apache', level: 80, category: 'tools' },
+
+  { name: 'Selenium', level: 90, category: 'sqa' },
+  { name: 'Cypress', level: 85, category: 'sqa' },
+  { name: 'Jest', level: 88, category: 'sqa' },
+  { name: 'Burp Suite', level: 92, category: 'sqa' },
+  { name: 'Postman', level: 95, category: 'sqa' },
+  { name: 'JMeter', level: 80, category: 'sqa' },
 ];

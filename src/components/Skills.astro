@@ -1,51 +1,53 @@
 ---
-// Import ikon yang dibutuhkan dari lucide-react
-import {
-  Swords, Palette, Cog, Shield, Wrench, Microscope,
-  Atom, Box, Code, Container, Cloud, Database, DatabaseZap,
-  BookType, Terminal, Anchor, Network
-} from 'lucide-react';
+import { SiCryptpad, SiAstro, SiTypescript, SiTailwindcss, SiNextdotjs, SiPostgresql, SiMysql, SiRedis, SiNginx, SiLaravel, SiPython, SiDocker, SiAmazon, SiGit, SiLinux, SiApache, SiVuedotjs } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaUserSecret, FaBug } from 'react-icons/fa';
+import { GoShieldCheck } from "react-icons/go";
+import { FaToolbox } from 'react-icons/fa6';
+import { PiListNumbersBold } from "react-icons/pi";
+import { AiOutlineAlert } from "react-icons/ai";
 import { skills } from '../data/skills';
-
-// Data tidak berubah
-const skillsByCategory = {
-  frontend: skills.filter(skill => skill.category === 'frontend'),
-  backend: skills.filter(skill => skill.category === 'backend'),
-  security: skills.filter(skill => skill.category === 'security'),
-  tools: skills.filter(skill => skill.category === 'tools'),
-};
+import { SiSelenium, SiCypress, SiJest, SiPostman, SiApachejmeter, SiBurpsuite } from 'react-icons/si';
 
 const categoryColors = {
   frontend: 'primary',
   backend: 'accent',
   security: 'error',
   tools: 'secondary',
+  sqa: 'warning',
 };
 
-// Pemetaan untuk ikon kategori agar kode lebih bersih
-const categoryDetails = {
-  frontend: { name: 'Frontend', Icon: Palette },
-  backend: { name: 'Backend', Icon: Cog },
-  security: { name: 'Security', Icon: Shield },
-  tools: { name: 'Tools & DevOps', Icon: Wrench },
+const iconMap = {
+  'React': FaReact,
+  'Vue.js': SiVuedotjs,
+  'Astro': SiAstro,
+  'TypeScript': SiTypescript,
+  'Tailwind CSS': SiTailwindcss,
+  'Next.js': SiNextdotjs,
+  'Laravel': SiLaravel,
+  'Node.js': FaNodeJs,
+  'Python': SiPython,
+  'PostgreSQL': SiPostgresql,
+  'MySQL': SiMysql,
+  'Redis': SiRedis,
+  'Penetration Testing': FaUserSecret,
+  'Network Security': GoShieldCheck,
+  'Cryptography': SiCryptpad,
+  'OWASP Top 10': PiListNumbersBold,
+  'Vulnerability Assessment': FaBug,
+  'Incident Response': AiOutlineAlert,
+  'Docker': SiDocker,
+  'AWS': SiAmazon,
+  'Git': SiGit,
+  'Linux': SiLinux,
+  'Nginx': SiNginx,
+  'Apache': SiApache,
+  'Selenium': SiSelenium,
+  'Cypress': SiCypress,
+  'Jest': SiJest,
+  'Burp Suite': SiBurpsuite,
+  'Postman': SiPostman,
+  'JMeter': SiApachejmeter,
 };
-
-// Definisikan ikon untuk setiap teknologi
-const technologies = [
-  { name: 'React', Icon: Atom, level: 'Expert' },
-  { name: 'Laravel', Icon: Wrench, level: 'Expert' },
-  { name: 'Node.js', Icon: Box, level: 'Advanced' },
-  { name: 'Python', Icon: Code, level: 'Expert' },
-  { name: 'Docker', Icon: Container, level: 'Advanced' },
-  { name: 'AWS', Icon: Cloud, level: 'Advanced' },
-  { name: 'PostgreSQL', Icon: Database, level: 'Expert' },
-  { name: 'Redis', Icon: DatabaseZap, level: 'Advanced' },
-  { name: 'TypeScript', Icon: BookType, level: 'Expert' },
-  { name: 'Linux', Icon: Terminal, level: 'Expert' },
-  { name: 'Kubernetes', Icon: Anchor, level: 'Advanced' },
-  { name: 'GraphQL', Icon: Network, level: 'Advanced' }
-];
-
 ---
 
 <section id="skills" class="py-20">
@@ -53,79 +55,192 @@ const technologies = [
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
         <span class="gradient-text cyber-skills-title">
-          <Swords className="skills-icon" />
+          <FaToolbox className="skills-icon" />
           <span>Arsenal & Capabilities</span>
           <span class="skills-scanner"></span>
         </span>
       </h2>
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {Object.entries(skillsByCategory).map(([category, categorySkills], index) => {
-          const rotationClasses = [
-            'card-rotate-wobble', 'card-rotate-pendulum', 
-            'card-rotate-dance', 'card-rotate-wave'
-          ];
-          const rotationClass = rotationClasses[index % rotationClasses.length];
-          const delayClass = `card-delay-${(index % 4) + 1}`;
-          const details = categoryDetails[category];
+      <div class="flex flex-wrap justify-center gap-6 skills-arsenal-grid">
+        {skills.map((skill, index) => {
+          const Icon = iconMap[skill.name] || FaToolbox; // Default ke TbToolbox
 
           return (
-            <div class={`glass-effect rounded-2xl p-6 transition-all duration-500 skill-card-effect group ${rotationClass} ${delayClass}`}>
-              <h3 class="text-xl font-semibold mb-6 text-center capitalize cyber-category-title">
-                {/* Gunakan komponen Ikon dari pemetaan */}
-                {details && <details.Icon className="category-icon" />}
-                <span class={`text-${categoryColors[category]}-400`}>
-                  {details ? details.name : category}
-                </span>
-                <div class="category-status"></div>
-              </h3>
-              
-              <div class="space-y-4 skills-container">
-                {categorySkills.map((skill) => (
-                  <div class="space-y-2 skill-item">
-                    <div class="flex justify-between items-center">
-                      <span class="text-sm font-medium text-dark-200 skill-name">{skill.name}</span>
-                      <span class="text-xs text-dark-400 skill-percentage">{skill.level}%</span>
-                    </div>
-                    <div class="w-full bg-dark-700 rounded-full h-2 skill-bar-container">
-                      <div 
-                        class={`h-2 rounded-full bg-${categoryColors[category]}-500 transition-all duration-700 ease-out skill-bar relative overflow-hidden cyber-skill-bar`}
-                        style={`width: ${skill.level}%`}
-                      >
-                        <div class="skill-bar-glow"></div>
-                        <div class="skill-bar-pulse"></div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div class={`skill-badge-advanced skill-badge-${index % 8}`} data-skill={skill.name} data-category={skill.category}>
+              {/* Logika render sekarang menjadi sangat sederhana */}
+              <Icon className="skill-icon" />
+              <span class="skill-name">{skill.name}</span>
+              <div class="skill-radar"></div>
+              <div class={`skill-category-indicator bg-${categoryColors[skill.category]}-500`}></div>
             </div>
           )
         })}
-      </div>
-      
-      <div class="mt-16">
-        <h3 class="text-2xl font-semibold text-center mb-8 text-dark-300 cyber-tech-title">
-          <Microscope className="tech-title-icon" />
-          <span>Weaponized Technologies</span>
-          <span class="tech-scanner-line"></span>
-        </h3>
-        <div class="flex flex-wrap justify-center gap-6 tech-arsenal-grid">
-          {technologies.map((tech, index) => (
-            <div class={`tech-badge-advanced tech-badge-${index % 4}`} data-tech={tech.name} data-level={tech.level}>
-              <tech.Icon className="tech-icon" />
-              <span class="tech-name">{tech.name}</span>
-              <span class="tech-level">{tech.level}</span>
-              <div class="tech-radar"></div>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   </div>
 </section>
 
+{/* Pastikan CSS dan Script dari sebelumnya tetap ada di sini */}
 <style>
+  .cyber-skills-title {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .skills-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    animation: weaponSpin 4s linear infinite;
+    color: white; 
+  }
+  
+  .skills-scanner {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff00, transparent);
+    animation: titleScan 2s ease-in-out infinite;
+  }
+  
+  @keyframes weaponSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes titleScan {
+    0%, 100% { transform: scaleX(0); opacity: 0; }
+    50% { transform: scaleX(1); opacity: 1; }
+  }
+
+  .skills-arsenal-grid {
+    position: relative;
+    opacity: 0;
+    animation: skillsArsenalFadeIn 0.8s ease-out 0.5s forwards;
+  }
+
+  @keyframes skillsArsenalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .skill-badge-advanced {
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    transform: translateX(200px);
+    opacity: 0;
+    animation: skillCircularSlide 1s ease-out forwards;
+  }
+
+  .skill-badge-advanced:hover {
+    border-color: #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    transform: translateY(-8px) scale(1.05) rotate(2deg);
+  }
+
+  .skill-badge-0 { animation-delay: 0.1s; }
+  .skill-badge-1 { animation-delay: 0.2s; }
+  .skill-badge-2 { animation-delay: 0.3s; }
+  .skill-badge-3 { animation-delay: 0.4s; }
+  .skill-badge-4 { animation-delay: 0.5s; }
+  .skill-badge-5 { animation-delay: 0.6s; }
+  .skill-badge-6 { animation-delay: 0.7s; }
+  .skill-badge-7 { animation-delay: 0.8s; }
+
+  @keyframes skillCircularSlide {
+    from { transform: translateX(200px) rotate(10deg); opacity: 0; }
+    50% { transform: translateX(-20px) rotate(-2deg); opacity: 0.8; }
+    to { transform: translateX(0) rotate(0deg); opacity: 1; }
+  }
+  
+  .skill-name {
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .skill-radar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 1px solid rgba(0, 255, 0, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+  }
+
+  .skill-badge-advanced:hover .skill-radar {
+    width: 100%;
+    height: 100%;
+    animation: skillRadarScan 2s ease-in-out infinite;
+  }
+
+  .skill-category-indicator {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0.7;
+  }
+
+  @keyframes skillIconFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-4px) rotate(5deg); }
+  }
+
+  @keyframes skillRadarScan {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(0); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
+  }
+</style>
+
+<script>
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const skillBadges = document.querySelectorAll('.skill-badge-advanced');
+  const badgeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+      }
+    });
+  }, observerOptions);
+  skillBadges.forEach(badge => {
+    badge.style.animationPlayState = 'paused';
+    badgeObserver.observe(badge);
+  });
+  skillBadges.forEach(badge => {
+    badge.addEventListener('mouseenter', () => {
+      badge.style.transform = 'translateY(-8px) scale(1.05) rotate(2deg)';
+    });
+    badge.addEventListener('mouseleave', () => {
+      badge.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+    });
+  });
+</script>
+
+<!-- <style>
   .cyber-skills-title {
     position: relative;
     display: inline-flex;
@@ -492,4 +607,4 @@ const technologies = [
   }, observerOptions);
 
   skillBars.forEach(bar => observer.observe(bar));
-</script>
+</script> -->
