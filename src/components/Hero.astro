@@ -3,13 +3,9 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 ---
 
 <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden animated-background cyber-theme">
-  <!-- Background Pattern -->
+  {/* Background elements remain the same */}
   <div class="absolute inset-0 cyber-grid opacity-30"></div>
-  
-  <!-- Cyber Security Matrix Effect -->
   <div class="matrix-rain absolute inset-0 pointer-events-none"></div>
-  
-  <!-- Terminal Window -->
   <div class="terminal-window absolute top-10 right-10 hidden lg:block">
     <div class="terminal-header">
       <div class="terminal-buttons">
@@ -32,37 +28,21 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
       </div>
     </div>
   </div>
-  
-  <!-- Floating Particles -->
   <div class="floating-particles">
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
   </div>
-  
-  <!-- Morphing Shapes -->
   <div class="morphing-shape w-64 h-64 top-20 left-10"></div>
   <div class="morphing-shape w-48 h-48 bottom-20 right-20" style="animation-delay: -10s;"></div>
   <div class="morphing-shape w-32 h-32 top-1/2 right-10" style="animation-delay: -15s;"></div>
-  
-  <!-- Floating Elements -->
   <div class="absolute top-20 left-10 w-20 h-20 bg-primary-500/20 rounded-full blur-xl floating-animation breathing"></div>
   <div class="absolute bottom-20 right-10 w-32 h-32 bg-accent-500/20 rounded-full blur-xl floating-animation breathing" style="animation-delay: -3s;"></div>
   <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-secondary-500/20 rounded-full blur-xl floating-animation breathing" style="animation-delay: -1.5s;"></div>
-  
-  <!-- Pulse Waves -->
   <div class="pulse-wave w-20 h-20 top-1/3 left-1/3"></div>
   <div class="pulse-wave w-16 h-16 bottom-1/3 right-1/3" style="animation-delay: -4s;"></div>
-  
+
   <div class="container mx-auto px-6 py-20 relative z-10">
     <div class="max-w-4xl mx-auto text-center">
-      <!-- Profile Image -->
+      {/* Profile Image */}
       <div class="mb-8 breathing">
         <img 
           src="/foto_profile.jpg" 
@@ -72,7 +52,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
         <div class="cyber-scan-line"></div>
       </div>
       
-      <!-- Main Content -->
+      {/* Main Content */}
       <h1 class="text-5xl md:text-7xl font-bold mb-6 text-shadow">
         <span class="text-shimmer cyber-text">
           Full-Stack Developer
@@ -83,354 +63,114 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
         </span>
       </h1>
       
-      <p class="text-xl md:text-2xl text-dark-300 mb-8 max-w-3xl mx-auto leading-relaxed breathing cyber-tagline">
-        <span class="highlight-text">Securing the digital frontier</span> through innovative code and bulletproof architectures. 
-        <span class="typing-text">Transforming vulnerabilities into fortresses.</span>
+      <p class="text-xl md:text-2xl text-dark-300 mb-8 max-w-3xl mx-auto leading-relaxed breathing cyber-tagline min-h-[56px] md:min-h-[64px]">
+        <span id="typing-text-container"></span><span class="cursor">&nbsp;</span>
       </p>
       
-      <!-- Highlight Stats -->
+      {/* Stats, Buttons, and Tech Stack remain the same */}
       <div class="grid grid-cols-3 gap-8 mb-10 max-w-2xl mx-auto breathing cyber-stats">
         <div class="text-center hover:scale-110 transition-transform duration-300 stat-card">
-          <svg class="w-8 h-8 mx-auto mb-2 text-primary-400" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
-          </svg>
+          <svg class="w-8 h-8 mx-auto mb-2 text-primary-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/></svg>
           <div class="text-3xl font-bold text-primary-400 mb-2 counter cyber-number" data-target="50">0</div>
           <div class="text-sm text-dark-400">Secure Systems</div>
         </div>
         <div class="text-center hover:scale-110 transition-transform duration-300 stat-card">
-          <svg class="w-8 h-8 mx-auto mb-2 text-accent-400" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
+          <svg class="w-8 h-8 mx-auto mb-2 text-accent-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
           <div class="text-3xl font-bold text-accent-400 mb-2 counter cyber-number" data-target="99">0</div>
           <div class="text-sm text-dark-400">Threats Neutralized</div>
         </div>
         <div class="text-center hover:scale-110 transition-transform duration-300 stat-card">
-          <svg class="w-8 h-8 mx-auto mb-2 text-secondary-400" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,15.4L16.2,16.2Z"/>
-          </svg>
+          <svg class="w-8 h-8 mx-auto mb-2 text-secondary-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,15.4L16.2,16.2Z"/></svg>
           <div class="text-3xl font-bold text-secondary-400 mb-2 counter cyber-number" data-target="24">0</div>
           <div class="text-sm text-dark-400">Hours Protection</div>
         </div>
       </div>
-      
-      <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-        <a 
-          href="#projects" 
-          class="bg-primary-600 hover:bg-primary-500 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25 breathing cyber-button"
-        >
-          <span class="button-text">Access Portfolio</span>
-          <svg class="w-5 h-5 inline-block ml-2" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10A2,2 0 0,1 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z"/>
-          </svg>
+        <a href="#projects" class="bg-primary-600 hover:bg-primary-500 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25 breathing cyber-button">
+          <span class="button-text">Access Portfolio</span><svg class="w-5 h-5 inline-block ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10A2,2 0 0,1 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z"/></svg>
         </a>
-        <a 
-          href="#contact" 
-          class="border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 cyber-button-outline"
-        >
-          <span class="button-text">Initiate Contact</span>
-          <svg class="w-5 h-5 inline-block ml-2" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
-          </svg>
+        <a href="#contact" class="border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 cyber-button-outline">
+          <span class="button-text">Initiate Contact</span><svg class="w-5 h-5 inline-block ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/></svg>
         </a>
       </div>
-      
-      <!-- Tech Stack Preview -->
       <div class="flex flex-wrap justify-center gap-4 opacity-70 breathing tech-arsenal">
-        <span class="tech-badge" data-tech="React">
-          <svg class="w-4 h-4 inline-block mr-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12,10.11C13.03,10.11 13.87,10.95 13.87,12C13.87,13 13.03,13.85 12,13.85C10.97,13.85 10.13,13 10.13,12C10.13,10.95 10.97,10.11 12,10.11M7.37,20C8,20.38 9.38,19.8 10.97,18.3C10.45,17.71 9.94,17.07 9.46,16.4C8.64,16.32 7.83,16.2 7.06,16.04C6.55,18.18 6.74,19.65 7.37,20M8.08,14.26L7.79,13.75C7.68,14.04 7.57,14.33 7.5,14.61C7.77,14.67 8.07,14.72 8.38,14.77C8.28,14.6 8.18,14.43 8.08,14.26M14.62,13.5L15.43,12L14.62,10.5C14.32,9.97 14,9.5 13.71,9.03C13.17,9 12.6,9 12,9C11.4,9 10.83,9 10.29,9.03C10,9.5 9.68,9.97 9.38,10.5L8.57,12L9.38,13.5C9.68,14.03 10,14.5 10.29,14.97C10.83,15 11.4,15 12,15C12.6,15 13.17,15 13.71,14.97C14,14.5 14.32,14.03 14.62,13.5M12,6.78C11.81,7 11.61,7.23 11.41,7.5C11.61,7.5 11.8,7.5 12,7.5C12.2,7.5 12.39,7.5 12.59,7.5C12.39,7.23 12.19,7 12,6.78M12,17.22C12.19,17 12.39,16.77 12.59,16.5C12.39,16.5 12.2,16.5 12,16.5C11.8,16.5 11.61,16.5 11.41,16.5C11.61,16.77 11.81,17 12,17.22M16.62,4C16,3.62 14.62,4.2 13.03,5.7C13.55,6.29 14.06,6.93 14.54,7.6C15.36,7.68 16.17,7.8 16.94,7.96C17.45,5.82 17.26,4.35 16.62,4M15.92,9.74L16.21,10.25C16.32,9.96 16.43,9.67 16.5,9.39C16.23,9.33 15.93,9.28 15.62,9.23C15.72,9.4 15.82,9.57 15.92,9.74M17.37,2.69C18.84,3.53 19,5.74 18.38,8.32C20.92,9.07 22.75,10.31 22.75,12C22.75,13.69 20.92,14.93 18.38,15.68C19,18.26 18.84,20.47 17.37,21.31C15.91,22.15 13.92,21.19 12,19.36C10.08,21.19 8.09,22.15 6.62,21.31C5.16,20.47 5,18.26 5.62,15.68C3.08,14.93 1.25,13.69 1.25,12C1.25,10.31 3.08,9.07 5.62,8.32C5,5.74 5.16,3.53 6.62,2.69C8.09,1.85 10.08,2.81 12,4.64C13.92,2.81 15.91,1.85 17.37,2.69M17.08,12C17.42,12.75 17.72,13.5 17.97,14.26C20.07,13.63 21.25,12.73 21.25,12C21.25,11.27 20.07,10.37 17.97,9.74C17.72,10.5 17.42,11.25 17.08,12M6.92,12C6.58,11.25 6.28,10.5 6.03,9.74C3.93,10.37 2.75,11.27 2.75,12C2.75,12.73 3.93,13.63 6.03,14.26C6.28,13.5 6.58,12.75 6.92,12Z"/>
-          </svg>
-          React
-        </span>
-        <span class="tech-badge" data-tech="Laravel">
-          <i class="fa-brands fa-laravel text-base align-middle"></i>
-          <span class="ml-1">Laravel</span>
-        </span>
-        <span class="tech-badge" data-tech="Node.js">
-          <i class="fa-brands fa-node-js"></i>
-          Node.js
-        </span>
-        <span class="tech-badge" data-tech="Python">
-          <svg class="w-4 h-4 inline-block mr-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M19.14,7.5A2.86,2.86 0 0,1 22,10.36V14.14A2.86,2.86 0 0,1 19.14,17H12C12,17.39 12.32,17.96 12.71,17.96H17V19.64A2.86,2.86 0 0,1 14.14,22.5H9.86A2.86,2.86 0 0,1 7,19.64V15.89C7,14.31 8.28,13.04 9.86,13.04H15.11C16.69,13.04 17.96,11.76 17.96,10.18V7.5H19.14M9.86,1.5H14.14A2.86,2.86 0 0,1 17,4.36V8.11C17,9.69 15.72,10.96 14.14,10.96H8.89C7.31,10.96 6.04,12.24 6.04,13.82V16.5H4.86A2.86,2.86 0 0,1 2,13.64V9.86A2.86,2.86 0 0,1 4.86,7H12C12,6.61 11.68,6.04 11.29,6.04H7V4.36A2.86,2.86 0 0,1 9.86,1.5M12,2.25C11.58,2.25 11.25,2.58 11.25,3C11.25,3.42 11.58,3.75 12,3.75C12.42,3.75 12.75,3.42 12.75,3C12.75,2.58 12.42,2.25 12,2.25M12,20.25C12.42,20.25 12.75,19.92 12.75,19.5C12.75,19.08 12.42,18.75 12,18.75C11.58,18.75 11.25,19.08 11.25,19.5C11.25,19.92 11.58,20.25 12,20.25Z"/>
-          </svg>
-          Python
-        </span>
-        <span class="tech-badge" data-tech="Security">
-          <i class="fa-solid fa-user-secret"></i>
-          CyberSec
-        </span>
+        <span class="tech-badge" data-tech="React"><svg class="w-4 h-4 inline-block mr-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12,10.11C13.03,10.11 13.87,10.95 13.87,12C13.87,13 13.03,13.85 12,13.85C10.97,13.85 10.13,13 10.13,12C10.13,10.95 10.97,10.11 12,10.11M7.37,20C8,20.38 9.38,19.8 10.97,18.3C10.45,17.71 9.94,17.07 9.46,16.4C8.64,16.32 7.83,16.2 7.06,16.04C6.55,18.18 6.74,19.65 7.37,20M8.08,14.26L7.79,13.75C7.68,14.04 7.57,14.33 7.5,14.61C7.77,14.67 8.07,14.72 8.38,14.77C8.28,14.6 8.18,14.43 8.08,14.26M14.62,13.5L15.43,12L14.62,10.5C14.32,9.97 14,9.5 13.71,9.03C13.17,9 12.6,9 12,9C11.4,9 10.83,9 10.29,9.03C10,9.5 9.68,9.97 9.38,10.5L8.57,12L9.38,13.5C9.68,14.03 10,14.5 10.29,14.97C10.83,15 11.4,15 12,15C12.6,15 13.17,15 13.71,14.97C14,14.5 14.32,14.03 14.62,13.5M12,6.78C11.81,7 11.61,7.23 11.41,7.5C11.61,7.5 11.8,7.5 12,7.5C12.2,7.5 12.39,7.5 12.59,7.5C12.39,7.23 12.19,7 12,6.78M12,17.22C12.19,17 12.39,16.77 12.59,16.5C12.39,16.5 12.2,16.5 12,16.5C11.8,16.5 11.61,16.5 11.41,16.5C11.61,16.77 11.81,17 12,17.22M16.62,4C16,3.62 14.62,4.2 13.03,5.7C13.55,6.29 14.06,6.93 14.54,7.6C15.36,7.68 16.17,7.8 16.94,7.96C17.45,5.82 17.26,4.35 16.62,4M15.92,9.74L16.21,10.25C16.32,9.96 16.43,9.67 16.5,9.39C16.23,9.33 15.93,9.28 15.62,9.23C15.72,9.4 15.82,9.57 15.92,9.74M17.37,2.69C18.84,3.53 19,5.74 18.38,8.32C20.92,9.07 22.75,10.31 22.75,12C22.75,13.69 20.92,14.93 18.38,15.68C19,18.26 18.84,20.47 17.37,21.31C15.91,22.15 13.92,21.19 12,19.36C10.08,21.19 8.09,22.15 6.62,21.31C5.16,20.47 5,18.26 5.62,15.68C3.08,14.93 1.25,13.69 1.25,12C1.25,10.31 3.08,9.07 5.62,8.32C5,5.74 5.16,3.53 6.62,2.69C8.09,1.85 10.08,2.81 12,4.64C13.92,2.81 15.91,1.85 17.37,2.69M17.08,12C17.42,12.75 17.72,13.5 17.97,14.26C20.07,13.63 21.25,12.73 21.25,12C21.25,11.27 20.07,10.37 17.97,9.74C17.72,10.5 17.42,11.25 17.08,12M6.92,12C6.58,11.25 6.28,10.5 6.03,9.74C3.93,10.37 2.75,11.27 2.75,12C2.75,12.73 3.93,13.63 6.03,14.26C6.28,13.5 6.58,12.75 6.92,12Z"/></svg> React</span>
+        <span class="tech-badge" data-tech="Laravel"><i class="fa-brands fa-laravel text-base align-middle"></i><span class="ml-1">Laravel</span></span>
+        <span class="tech-badge" data-tech="Node.js"><i class="fa-brands fa-node-js"></i> Node.js</span>
+        <span class="tech-badge" data-tech="Python"><svg class="w-4 h-4 inline-block mr-1" fill="currentColor" viewBox="0 0 24 24"><path d="M19.14,7.5A2.86,2.86 0 0,1 22,10.36V14.14A2.86,2.86 0 0,1 19.14,17H12C12,17.39 12.32,17.96 12.71,17.96H17V19.64A2.86,2.86 0 0,1 14.14,22.5H9.86A2.86,2.86 0 0,1 7,19.64V15.89C7,14.31 8.28,13.04 9.86,13.04H15.11C16.69,13.04 17.96,11.76 17.96,10.18V7.5H19.14M9.86,1.5H14.14A2.86,2.86 0 0,1 17,4.36V8.11C17,9.69 15.72,10.96 14.14,10.96H8.89C7.31,10.96 6.04,12.24 6.04,13.82V16.5H4.86A2.86,2.86 0 0,1 2,13.64V9.86A2.86,2.86 0 0,1 4.86,7H12C12,6.61 11.68,6.04 11.29,6.04H7V4.36A2.86,2.86 0 0,1 9.86,1.5M12,2.25C11.58,2.25 11.25,2.58 11.25,3C11.25,3.42 11.58,3.75 12,3.75C12.42,3.75 12.75,3.42 12.75,3C12.75,2.58 12.42,2.25 12,2.25M12,20.25C12.42,20.25 12.75,19.92 12.75,19.5C12.75,19.08 12.42,18.75 12,18.75C11.58,18.75 11.25,19.08 11.25,19.5C11.25,19.92 11.58,20.25 12,20.25Z"/></svg> Python</span>
+        <span class="tech-badge" data-tech="Security"><i class="fa-solid fa-user-secret"></i> CyberSec</span>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  .cyber-theme {
-    position: relative;
+  /* CSS for the typing cursor effect */
+  .cursor {
+    display: inline-block;
+    background-color: #00ff00;
+    width: 3px;
+    margin-left: 2px;
+    animation: blink-cursor 0.7s infinite;
+  }
+  @keyframes blink-cursor {
+    0%, 100% { background-color: #00ff00; }
+    50% { background-color: transparent; }
   }
   
-  /* Matrix Rain Effect */
-  .matrix-rain {
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='10' y='20' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E01%3C/text%3E%3Ctext x='30' y='40' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E10%3C/text%3E%3Ctext x='50' y='60' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E11%3C/text%3E%3Ctext x='70' y='80' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E00%3C/text%3E%3C/svg%3E");
-    animation: matrixFall 2s linear infinite;
-  }
-  
-  @keyframes matrixFall {
-    from {
-      background-position-y: 0;
-    }
-    to {
-      background-position-y: 100px;
-    }
-  }
-  
-  /* Terminal Window */
-  .terminal-window {
-    width: 350px;
-    background: rgba(0, 0, 0, 0.9);
-    border-radius: 8px;
-    border: 1px solid #00ff00;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
-    font-family: 'JetBrains Mono', monospace;
-    animation: terminalGlow 3s ease-in-out infinite;
-    margin-top: 2rem;
-  }
-  
-  .terminal-header {
-    background: #1a1a1a;
-    padding: 8px 12px;
-    border-radius: 8px 8px 0 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .terminal-buttons {
-    display: flex;
-    gap: 4px;
-  }
-  
-  .terminal-btn {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
-  
-  .terminal-btn.red { background: #ff5f56; }
-  .terminal-btn.yellow { background: #ffbd2e; }
-  .terminal-btn.green { background: #27ca3f; }
-  
-  .terminal-title {
+  /* CSS for the dynamic text highlight */
+  .highlight-text-dynamic {
     color: #00ff00;
-    font-size: 12px;
-    margin-left: auto;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
   }
   
-  .terminal-body {
-    padding: 12px;
-    color: #00ff00;
-    font-size: 12px;
-    line-height: 1.4;
-  }
-  
-  .terminal-prompt {
-    color: #00ff00;
-    font-weight: bold;
-  }
-  
-  .terminal-command {
-    color: #ffffff;
-    margin-left: 8px;
-  }
-  
-  .terminal-output {
-    margin-top: 8px;
-  }
-  
-  .scan-result {
-    color: #00ff00;
-    margin: 2px 0;
-    animation: scanLine 0.5s ease-in-out;
-  }
-  
-  .scan-result.success {
-    color: #00ff00;
-    font-weight: bold;
-    text-shadow: 0 0 10px #00ff00;
-  }
-  
-  @keyframes terminalGlow {
-    0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 0, 0.3); }
-    50% { box-shadow: 0 0 30px rgba(0, 255, 0, 0.5); }
-  }
-  
-  @keyframes scanLine {
-    0% { opacity: 0; transform: translateX(-10px); }
-    100% { opacity: 1; transform: translateX(0); }
-  }
-  
-  /* Cyber Avatar */
-  .cyber-avatar {
-    position: relative;
-  }
-  
-  .cyber-scan-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #00ff00, transparent);
-    animation: scanAvatar 3s ease-in-out infinite;
-  }
-  
-  @keyframes scanAvatar {
-    0% { transform: translateY(0); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateY(128px); opacity: 0; }
-  }
-  
-  /* Cyber Text Effects */
-  .cyber-text {
-    position: relative;
-    text-shadow: 
-      0 0 5px currentColor,
-      0 0 10px currentColor,
-      0 0 15px currentColor;
-  }
-  
-  .highlight-text {
-    background: linear-gradient(45deg, #00ff00, #00ffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: bold;
-  }
-  
-  .typing-text {
-    border-right: 2px solid #00ff00;
-    animation: typing 4s steps(40) infinite, blink 1s infinite;
-  }
-  
-  @keyframes typing {
-    0%, 50% { width: 0; }
-    100% { width: 100%; }
-  }
-  
-  @keyframes blink {
-    0%, 50% { border-color: #00ff00; }
-    51%, 100% { border-color: transparent; }
-  }
-  
-  /* Cyber Stats */
-  .cyber-stats .stat-card {
-    position: relative;
-    padding: 1rem;
-    border: 1px solid rgba(0, 255, 0, 0.3);
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.3);
-  }
-  
-  .cyber-number {
-    text-shadow: 0 0 10px currentColor;
-    animation: numberPulse 2s ease-in-out infinite;
-  }
-  
-  @keyframes numberPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
-  
-  /* Cyber Buttons */
-  .cyber-button {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #00ff00;
-  }
-  
-  .cyber-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);
-    transition: left 0.5s ease;
-  }
-  
-  .cyber-button:hover::before {
-    left: 100%;
-  }
-  
-  .button-icon {
-    margin-left: 8px;
-    animation: iconFloat 2s ease-in-out infinite;
-  }
-  
-  @keyframes iconFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-2px); }
-  }
-  
-  /* Tech Arsenal */
-  .tech-arsenal .tech-badge {
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(0, 255, 0, 0.3);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    cursor: default;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .tech-badge::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.1), transparent);
-    transition: left 0.3s ease;
-  }
-  
-  .tech-badge:hover {
-    border-color: #00ff00;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
-    transform: scale(1.1) translateY(-2px);
-  }
-  
-  .tech-badge:hover::before {
-    left: 100%;
-  }
-  
-  /* Typing Effect */
-  .typing-effect {
-    overflow: hidden;
-    border-right: 2px solid #00ff00;
-    white-space: nowrap;
-    animation: typewriter 4s steps(40) infinite;
-  }
-  
-  @keyframes typewriter {
-    0% { width: 0; }
-    50% { width: 100%; }
-    100% { width: 0; }
-  }
+  /* Other styles remain the same */
+  .cyber-theme { position: relative; }
+  .matrix-rain { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='10' y='20' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E01%3C/text%3E%3Ctext x='30' y='40' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E10%3C/text%3E%3Ctext x='50' y='60' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E11%3C/text%3E%3Ctext x='70' y='80' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E00%3C/text%3E%3C/svg%3E"); animation: matrixFall 2s linear infinite; }
+  @keyframes matrixFall { from { background-position-y: 0; } to { background-position-y: 100px; } }
+  .terminal-window { width: 350px; background: rgba(0, 0, 0, 0.9); border-radius: 8px; border: 1px solid #00ff00; box-shadow: 0 0 20px rgba(0, 255, 0, 0.3); font-family: 'JetBrains Mono', monospace; animation: terminalGlow 3s ease-in-out infinite; margin-top: 2rem; }
+  .terminal-header { background: #1a1a1a; padding: 8px 12px; border-radius: 8px 8px 0 0; display: flex; align-items: center; gap: 8px; }
+  .terminal-buttons { display: flex; gap: 4px; }
+  .terminal-btn { width: 12px; height: 12px; border-radius: 50%; }
+  .terminal-btn.red { background: #ff5f56; } .terminal-btn.yellow { background: #ffbd2e; } .terminal-btn.green { background: #27ca3f; }
+  .terminal-title { color: #00ff00; font-size: 12px; margin-left: auto; }
+  .terminal-body { padding: 12px; color: #00ff00; font-size: 12px; line-height: 1.4; }
+  .terminal-prompt { color: #00ff00; font-weight: bold; }
+  .terminal-command { color: #ffffff; margin-left: 8px; }
+  .terminal-output { margin-top: 8px; }
+  .scan-result { color: #00ff00; margin: 2px 0; animation: scanLine 0.5s ease-in-out; }
+  .scan-result.success { color: #00ff00; font-weight: bold; text-shadow: 0 0 10px #00ff00; }
+  @keyframes terminalGlow { 0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 0, 0.3); } 50% { box-shadow: 0 0 30px rgba(0, 255, 0, 0.5); } }
+  @keyframes scanLine { 0% { opacity: 0; transform: translateX(-10px); } 100% { opacity: 1; transform: translateX(0); } }
+  .cyber-avatar { position: relative; }
+  .cyber-scan-line { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #00ff00, transparent); animation: scanAvatar 3s ease-in-out infinite; }
+  @keyframes scanAvatar { 0% { transform: translateY(0); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(128px); opacity: 0; } }
+  .cyber-text { position: relative; text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor; }
+  .highlight-text { background: linear-gradient(45deg, #00ff00, #00ffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; }
+  .cyber-stats .stat-card { position: relative; padding: 1rem; border: 1px solid rgba(0, 255, 0, 0.3); border-radius: 8px; background: rgba(0, 0, 0, 0.3); }
+  .cyber-number { text-shadow: 0 0 10px currentColor; animation: numberPulse 2s ease-in-out infinite; }
+  @keyframes numberPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+  .cyber-button { position: relative; overflow: hidden; border: 1px solid #00ff00; }
+  .cyber-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent); transition: left 0.5s ease; }
+  .cyber-button:hover::before { left: 100%; }
+  .button-icon { margin-left: 8px; animation: iconFloat 2s ease-in-out infinite; }
+  @keyframes iconFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+  .tech-arsenal .tech-badge { background: rgba(0, 0, 0, 0.7); border: 1px solid rgba(0, 255, 0, 0.3); padding: 8px 16px; border-radius: 20px; font-size: 14px; transition: all 0.3s ease; cursor: default; position: relative; overflow: hidden; }
+  .tech-badge::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.1), transparent); transition: left 0.3s ease; }
+  .tech-badge:hover { border-color: #00ff00; box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); transform: scale(1.1) translateY(-2px); }
+  .tech-badge:hover::before { left: 100%; }
+  .terminal-command.typing-effect { overflow: hidden; border-right: 2px solid #00ff00; white-space: nowrap; animation: typewriter 4s steps(40) infinite; }
+  @keyframes typewriter { 0% { width: 0; } 50% { width: 100%; } 100% { width: 0; } }
 </style>
+
 <script>
-  // Counter animation
+  // Counter animation logic
   function animateCounter(element) {
     const target = parseInt(element.getAttribute('data-target'));
     const duration = 2000;
     const step = target / (duration / 16);
     let current = 0;
-    
     const timer = setInterval(() => {
       current += step;
       if (current >= target) {
@@ -440,8 +180,6 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
       element.textContent = Math.floor(current) + (target >= 100 ? '+' : target >= 5 ? '+' : '');
     }, 16);
   }
-  
-  // Intersection Observer for counters
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -450,22 +188,77 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
       }
     });
   });
-  
+
+  // Typing effect logic
   document.addEventListener('DOMContentLoaded', function() {
     // Animate counters
     document.querySelectorAll('.counter').forEach(counter => {
       counterObserver.observe(counter);
     });
     
-    // Add typing effect for the tagline
-    const tagline = document.querySelector('p');
-    if (tagline) {
-      tagline.style.opacity = '0';
+    // ==== SCRIPT EFEK MENGETIK DENGAN LOGIKA BARU DAN LEBIH ANDAL ====
+    const typingContainer = document.getElementById('typing-text-container');
+    if (typingContainer) {
+      const jobs = [
+        { text: "Architecting scalable and resilient web solutions, from database to deployment.", highlights: ["Architecting", "scalable", "resilient"] },
+        { text: "Proactively hunting for threats and engineering bulletproof digital defenses.", highlights: ["hunting for threats", "bulletproof"] },
+        { text: "Where innovative development meets impenetrable security.", highlights: ["innovative development", "impenetrable security"] }
+      ];
+
+      // Fungsi untuk mengubah teks biasa menjadi array unit (karakter atau tag utuh)
+      function createCharacterMap(text, highlights) {
+        let highlightedText = text;
+        highlights.forEach(word => {
+            const regex = new RegExp(`\\b(${word})\\b`, 'gi');
+            highlightedText = highlightedText.replace(regex, `<span class="highlight-text-dynamic">$1</span>`);
+        });
+
+        const map = [];
+        let i = 0;
+        while (i < highlightedText.length) {
+            if (highlightedText[i] === '<') {
+                const tagEnd = highlightedText.indexOf('>', i);
+                map.push(highlightedText.substring(i, tagEnd + 1));
+                i = tagEnd + 1;
+            } else {
+                map.push(highlightedText[i]);
+                i++;
+            }
+        }
+        return map;
+      }
       
-      setTimeout(() => {
-        tagline.style.opacity = '1';
-        tagline.style.animation = 'fade-in 1s ease-out';
-      }, 1000);
+      let jobIndex = 0;
+      let mapIndex = 0;
+      let isDeleting = false;
+
+      function typeText() {
+        const currentJob = jobs[jobIndex];
+        const characterMap = createCharacterMap(currentJob.text, currentJob.highlights);
+
+        if (isDeleting) {
+          mapIndex--;
+        } else {
+          mapIndex++;
+        }
+
+        typingContainer.innerHTML = characterMap.slice(0, mapIndex).join('');
+
+        let typingSpeed = isDeleting ? 40 : 80;
+
+        if (!isDeleting && mapIndex >= characterMap.length) {
+          typingSpeed = 2000;
+          isDeleting = true;
+        } else if (isDeleting && mapIndex === 0) {
+          isDeleting = false;
+          jobIndex = (jobIndex + 1) % jobs.length;
+          typingSpeed = 500;
+        }
+        
+        setTimeout(typeText, typingSpeed);
+      }
+
+      typeText();
     }
   });
 </script>

@@ -1,22 +1,20 @@
 ---
-import { SiCryptpad, SiAstro, SiTypescript, SiTailwindcss, SiNextdotjs, SiPostgresql, SiMysql, SiRedis, SiNginx, SiLaravel, SiPython, SiDocker, SiAmazon, SiGit, SiLinux, SiApache, SiVuedotjs } from 'react-icons/si';
-import { FaReact, FaNodeJs, FaUserSecret, FaBug } from 'react-icons/fa';
+import { 
+  SiAstro, SiTypescript, SiTailwindcss, SiNextdotjs, SiPostgresql, 
+  SiMysql, SiRedis, SiNginx, SiLaravel, SiPython, SiDocker, SiAmazon, SiGit, 
+  SiLinux, SiVuedotjs, SiSelenium, SiCypress, SiJest, SiPostman, 
+  SiBurpsuite, SiPhp, SiCisco, SiGo
+} from 'react-icons/si';
+import { FaJava, FaReact, FaNodeJs, FaUserSecret, FaBug } from 'react-icons/fa';
 import { GoShieldCheck } from "react-icons/go";
-import { FaToolbox } from 'react-icons/fa6';
 import { PiListNumbersBold } from "react-icons/pi";
-import { AiOutlineAlert } from "react-icons/ai";
 import { skills } from '../data/skills';
-import { SiSelenium, SiCypress, SiJest, SiPostman, SiApachejmeter, SiBurpsuite } from 'react-icons/si';
-
-const categoryColors = {
-  frontend: 'primary',
-  backend: 'accent',
-  security: 'error',
-  tools: 'secondary',
-  sqa: 'warning',
-};
 
 const iconMap = {
+  'Java': FaJava,
+  'PHP': SiPhp,
+  'Cisco Networking': SiCisco,
+  'Go': SiGo,
   'React': FaReact,
   'Vue.js': SiVuedotjs,
   'Astro': SiAstro,
@@ -31,580 +29,268 @@ const iconMap = {
   'Redis': SiRedis,
   'Penetration Testing': FaUserSecret,
   'Network Security': GoShieldCheck,
-  'Cryptography': SiCryptpad,
   'OWASP Top 10': PiListNumbersBold,
   'Vulnerability Assessment': FaBug,
-  'Incident Response': AiOutlineAlert,
   'Docker': SiDocker,
   'AWS': SiAmazon,
   'Git': SiGit,
   'Linux': SiLinux,
   'Nginx': SiNginx,
-  'Apache': SiApache,
   'Selenium': SiSelenium,
   'Cypress': SiCypress,
   'Jest': SiJest,
   'Burp Suite': SiBurpsuite,
   'Postman': SiPostman,
-  'JMeter': SiApachejmeter,
 };
+
+const skillsPerRow = 6;
+const rows = [];
+for (let i = 0; i < skills.length; i += skillsPerRow) {
+    rows.push(skills.slice(i, i + skillsPerRow));
+}
 ---
 
-<section id="skills" class="py-20">
-  <div class="container mx-auto px-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-        <span class="gradient-text cyber-skills-title">
-          <FaToolbox className="skills-icon" />
-          <span>Arsenal & Capabilities</span>
-          <span class="skills-scanner"></span>
-        </span>
-      </h2>
-      
-      <div class="flex flex-wrap justify-center gap-6 skills-arsenal-grid">
-        {skills.map((skill, index) => {
-          const Icon = iconMap[skill.name] || FaToolbox; // Default ke TbToolbox
-
-          return (
-            <div class={`skill-badge-advanced skill-badge-${index % 8}`} data-skill={skill.name} data-category={skill.category}>
-              {/* Logika render sekarang menjadi sangat sederhana */}
-              <Icon className="skill-icon" />
-              <span class="skill-name">{skill.name}</span>
-              <div class="skill-radar"></div>
-              <div class={`skill-category-indicator bg-${categoryColors[skill.category]}-500`}></div>
-            </div>
-          )
-        })}
+<section id="skills" class="py-20 text-white min-h-screen flex flex-col justify-center items-center overflow-hidden">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-8">
+      <span class="gradient-text">Skills</span>
+    </h2>
+    <div id="skill-display-area" class="mb-16 min-h-[100px] max-w-2xl mx-auto p-6 border border-gray-700 rounded-lg bg-gray-900/50">
+      <h3 id="skill-name-display" class="text-2xl font-bold transition-colors duration-300">Select a Skill</h3>
+      <div class="overflow-hidden h-[50px] mt-2">
+        <p id="skill-description-display" class="transition-all duration-300 ease-in-out">Click on a keycap below to see the details here.</p>
+      </div>
+    </div>
+    <div class="keyboard">
+      <div class="keyboard-body">
+        {rows.map((row, rowIdx) => (
+          <div class="keyboard-row" key={rowIdx}>
+            {row.map((skill) => {
+              const Icon = iconMap[skill.name];
+              return (
+                <button
+                  class="keycap"
+                  data-name={skill.name}
+                  data-description={skill.description}
+                  aria-label={`Skill: ${skill.name}`}
+                  style={{ '--glow-color': skill.color }}
+                  key={skill.name}
+                  type="button"
+                >
+                  <div class="keycap-top">
+                    {Icon && <Icon size={48} />}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        ))}
       </div>
     </div>
   </div>
 </section>
 
-{/* Pastikan CSS dan Script dari sebelumnya tetap ada di sini */}
 <style>
-  .cyber-skills-title {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
+  :root {
+    --key-size: 90px;
+    --key-height: 12px;
+    --key-press-depth: 6px;
   }
-  
-  .skills-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    animation: weaponSpin 4s linear infinite;
-    color: white; 
-  }
-  
-  .skills-scanner {
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #00ff00, transparent);
-    animation: titleScan 2s ease-in-out infinite;
-  }
-  
-  @keyframes weaponSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  @keyframes titleScan {
-    0%, 100% { transform: scaleX(0); opacity: 0; }
-    50% { transform: scaleX(1); opacity: 1; }
-  }
-
-  .skills-arsenal-grid {
-    position: relative;
-    opacity: 0;
-    animation: skillsArsenalFadeIn 0.8s ease-out 0.5s forwards;
-  }
-
-  @keyframes skillsArsenalFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  .skill-badge-advanced {
-    position: relative;
-    background: rgba(0, 0, 0, 0.8);
-    border: 1px solid rgba(0, 255, 0, 0.3);
-    border-radius: 12px;
-    padding: 1.5rem 1rem;
-    min-width: 140px;
+  .keyboard {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    overflow: hidden;
-    transform: translateX(200px);
-    opacity: 0;
-    animation: skillCircularSlide 1s ease-out forwards;
-  }
-
-  .skill-badge-advanced:hover {
-    border-color: #00ff00;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
-    transform: translateY(-8px) scale(1.05) rotate(2deg);
-  }
-
-  .skill-badge-0 { animation-delay: 0.1s; }
-  .skill-badge-1 { animation-delay: 0.2s; }
-  .skill-badge-2 { animation-delay: 0.3s; }
-  .skill-badge-3 { animation-delay: 0.4s; }
-  .skill-badge-4 { animation-delay: 0.5s; }
-  .skill-badge-5 { animation-delay: 0.6s; }
-  .skill-badge-6 { animation-delay: 0.7s; }
-  .skill-badge-7 { animation-delay: 0.8s; }
-
-  @keyframes skillCircularSlide {
-    from { transform: translateX(200px) rotate(10deg); opacity: 0; }
-    50% { transform: translateX(-20px) rotate(-2deg); opacity: 0.8; }
-    to { transform: translateX(0) rotate(0deg); opacity: 1; }
-  }
-  
-  .skill-name {
-    font-weight: 600;
-    color: #ffffff;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-
-  .skill-radar {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border: 1px solid rgba(0, 255, 0, 0.5);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.5s ease;
-  }
-
-  .skill-badge-advanced:hover .skill-radar {
+    justify-content: center;
     width: 100%;
-    height: 100%;
-    animation: skillRadarScan 2s ease-in-out infinite;
   }
-
-  .skill-category-indicator {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    opacity: 0.7;
+  .keyboard-body {
+    margin-top: 1rem; 
   }
-
-  @keyframes skillIconFloat {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-4px) rotate(5deg); }
-  }
-
-  @keyframes skillRadarScan {
-    0% { opacity: 1; transform: translate(-50%, -50%) scale(0); }
-    100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
-  }
-</style>
-
-<script>
-  const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  const skillBadges = document.querySelectorAll('.skill-badge-advanced');
-  const badgeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = 'running';
-      }
-    });
-  }, observerOptions);
-  skillBadges.forEach(badge => {
-    badge.style.animationPlayState = 'paused';
-    badgeObserver.observe(badge);
-  });
-  skillBadges.forEach(badge => {
-    badge.addEventListener('mouseenter', () => {
-      badge.style.transform = 'translateY(-8px) scale(1.05) rotate(2deg)';
-    });
-    badge.addEventListener('mouseleave', () => {
-      badge.style.transform = 'translateY(0) scale(1) rotate(0deg)';
-    });
-  });
-</script>
-
-<!-- <style>
-  .cyber-skills-title {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .skills-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    animation: weaponSpin 4s linear infinite;
-  }
-  
-  .skills-scanner {
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #00ff00, transparent);
-    animation: titleScan 2s ease-in-out infinite;
-  }
-  
-  @keyframes weaponSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  @keyframes skillsScan {
-    0%, 100% { transform: scaleX(0); opacity: 0; }
-    50% { transform: scaleX(1); opacity: 1; }
-  }
-  
-  .cyber-category-title {
-    position: relative;
+  .keyboard-row {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
-  
-  .category-icon {
-    width: 2rem; 
-    height: 2rem;
-    animation: categoryPulse 2s ease-in-out infinite;
+  .keyboard-row:not(:last-child) {
+    margin-bottom: 0.75rem;
   }
-  
-  .category-status {
-    width: 60%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, currentColor, transparent);
-    animation: statusScan 2s ease-in-out infinite;
+  /* CSS untuk stagger (berjenjang) hanya untuk baris genap */
+  .keyboard-row:nth-child(2),
+  .keyboard-row:nth-child(4) {
+    transform: translateX(calc(var(--key-size) / 2));
   }
-  
-  @keyframes categoryPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-  }
-  
-  @keyframes statusScan {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
-  }
-  
-  .skill-item {
-    position: relative;
-    padding: 0.5rem;
-    border-radius: 6px;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+  #skill-display-area {
     transition: all 0.3s ease;
   }
-  
-  .skill-item:hover {
-    border-color: rgba(0, 255, 0, 0.3);
-    background: rgba(0, 255, 0, 0.05);
-    transform: translateX(4px);
-  }
-  
-  .skill-name {
-    position: relative;
-  }
-  
-  .skill-name::before {
-    content: '▶';
-    position: absolute;
-    left: -1rem;
-    color: #00ff00;
-    font-size: 0.7rem;
+  #skill-description-display {
+    color: #cccccc;
+    transform: translateY(100%);
     opacity: 0;
-    transition: opacity 0.3s ease;
   }
-  
-  .skill-item:hover .skill-name::before {
+  #skill-description-display.visible {
+    transform: translateY(0);
     opacity: 1;
   }
-  
-  .skill-percentage {
-    font-family: 'JetBrains Mono', monospace;
-    color: #00ff00;
-    text-shadow: 0 0 5px currentColor;
-  }
-  
-  .cyber-skill-bar {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .skill-bar-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    animation: skillGlow 2s ease-in-out infinite;
-  }
-  
-  .skill-bar-pulse {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 4px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    animation: skillPulse 1s ease-in-out infinite;
-  }
-  
-  @keyframes skillGlow {
-    0%, 100% { transform: translateX(-100%); }
-    50% { transform: translateX(100%); }
-  }
-  
-  @keyframes skillPulse {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
-  }
-  
-  .cyber-tech-title {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .tech-title-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    animation: techScan 3s ease-in-out infinite;
-  }
-  
-  .tech-scanner-line {
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #00ff00, transparent);
-    animation: techLineScan 2s ease-in-out infinite;
-  }
-  
-  @keyframes techScan {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.1) rotate(10deg); }
-  }
-  
-  @keyframes techLineScan {
-    0%, 100% { opacity: 0.3; transform: scaleX(0); }
-    50% { opacity: 1; transform: scaleX(1); }
-  }
-  
-  .tech-arsenal-grid {
-    position: relative;
-  }
-  
-  .tech-badge-advanced {
-    position: relative;
-    background: rgba(0, 0, 0, 0.8);
-    border: 1px solid rgba(0, 255, 0, 0.3);
+  .keycap {
+    width: var(--key-size);
+    height: var(--key-size);
+    background-color: var(--glow-color);
     border-radius: 12px;
-    padding: 1rem;
-    min-width: 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
+    border: none;
+    color: #1a202c;
     cursor: pointer;
-    overflow: hidden;
-  }
-  
-  .tech-badge-advanced::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.1), transparent);
-    transition: left 0.5s ease;
-  }
-  
-  .tech-badge-advanced:hover::before {
-    left: 100%;
-  }
-  
-  .tech-badge-advanced:hover {
-    border-color: #00ff00;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
-    transform: translateY(-8px) scale(1.05);
-  }
-  
-  .tech-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    animation: techIconFloat 3s ease-in-out infinite;
-  }
-  
-  .tech-name {
-    font-weight: 600;
-    color: #ffffff;
-    text-align: center;
-  }
-  
-  .tech-level {
-    font-size: 0.7rem;
-    color: #00ff00;
-    font-family: 'JetBrains Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .tech-radar {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border: 1px solid rgba(0, 255, 0, 0.5);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.5s ease;
-  }
-  
-  .tech-badge-advanced:hover .tech-radar {
-    width: 100%;
-    height: 100%;
-    animation: radarScan 2s ease-in-out infinite;
-  }
-  
-  @keyframes techIconFloat {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-4px) rotate(5deg); }
-  }
-  
-  @keyframes radarScan {
-    0% { opacity: 1; transform: translate(-50%, -50%) scale(0); }
-    100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
-  }
-  
-  /* Staggered animations for tech badges */
-  .tech-badge-0 { animation-delay: 0s; }
-  .tech-badge-1 { animation-delay: 0.2s; }
-  .tech-badge-2 { animation-delay: 0.4s; }
-  .tech-badge-3 { animation-delay: 0.6s; }
-  
-  .skill-card-effect {
     position: relative;
-    animation: skillFloat 7s ease-in-out infinite;
+    box-shadow:
+      inset 0 6px 8px 0 rgba(255, 255, 255, 0.25),
+      inset 0 -8px 8px 0 rgba(0, 0, 0, 0.3),
+      0px var(--key-height) 0px 0px color-mix(in srgb, var(--glow-color) 60%, black);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.2s;
+    will-change: transform, box-shadow, filter;
+    filter: brightness(0.85);
   }
-  
-  .skill-card-effect::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
+  .keycap-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 0.8s ease;
-    border-radius: 1rem;
+    filter: brightness(1.3);
+    transition: filter 0.2s ease;
   }
-  
-  .skill-card-effect:hover::before {
-    left: 100%;
+  .keycap:hover {
+    filter: brightness(1);
   }
-  
-  .skill-card-effect:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  .keycap:active {
+    transform: translateY(var(--key-press-depth));
+    box-shadow:
+      inset 0 3px 4px 0 rgba(255, 255, 255, 0.25),
+      inset 0 -4px 4px 0 rgba(0, 0, 0, 0.3),
+      0px calc(var(--key-height) - var(--key-press-depth)) 0px 0px color-mix(in srgb, var(--glow-color) 60%, black);
   }
-  
-  .skill-bar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 1s ease;
+  .keycap.active {
+    filter: brightness(1.1);
+    transform: translateY(var(--key-press-depth));
+    box-shadow:
+      inset 0 4px 6px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -6px 6px 0 rgba(0, 0, 0, 0.3),
+      0px calc(var(--key-height) - var(--key-press-depth)) 0px 0px color-mix(in srgb, var(--glow-color) 60%, black),
+      0 0 40px 8px var(--glow-color, #fff);
+    animation: pulse-glow 2s infinite ease-in-out;
   }
-  
-  .skill-card-effect:hover .skill-bar::before {
-    left: 100%;
-  }
-  
-  .tech-badge {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .tech-badge::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.3), transparent);
-    transition: left 0.5s ease;
-  }
-  
-  .tech-badge:hover::before {
-    left: 100%;
-  }
-  
-  .tech-badge:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
-  }
-  
-  @keyframes skillFloat {
-    0%, 100% { 
-      transform: translateY(0px) rotateZ(0deg); 
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow:
+        inset 0 4px 6px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -6px 6px 0 rgba(0, 0, 0, 0.3),
+        0px calc(var(--key-height) - var(--key-press-depth)) 0px 0px color-mix(in srgb, var(--glow-color) 60%, black),
+        0 0 40px 8px var(--glow-color, #fff);
     }
-    50% { 
-      transform: translateY(-3px) rotateZ(0.3deg); 
+    50% {
+      box-shadow:
+        inset 0 4px 6px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -6px 6px 0 rgba(0, 0, 0, 0.3),
+        0px calc(var(--key-height) - var(--key-press-depth)) 0px 0px color-mix(in srgb, var(--glow-color) 60%, black),
+        0 0 55px 12px var(--glow-color, #fff);
     }
+  }
+  @media (max-width: 768px) {
+    :root { --key-size: 60px; --key-height: 10px; }
+    .keyboard-row { gap: 0.5rem; }
+    .keyboard-row:not(:last-child) { margin-bottom: 0.5rem; }
+    .keycap svg { width: 32px; height: 32px; }
+  }
+  @media (max-width: 480px) {
+    :root { --key-size: 45px; --key-height: 8px; }
+    .keycap svg { width: 24px; height: 24px; }
   }
 </style>
 
 <script>
-  // Animate skill bars on scroll
-  const observerOptions = {
-    threshold: 0.3,
-    once: true
-  };
+document.addEventListener('DOMContentLoaded', () => {
+  const keycaps = document.querySelectorAll('.keycap');
+  const nameDisplay = document.getElementById('skill-name-display');
+  const descriptionDisplay = document.getElementById('skill-description-display');
+  const skillsPerRow = 6;
+  let activeIndex = -1;
 
-  const skillBars = document.querySelectorAll('.h-2.rounded-full');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const bar = entry.target;
-        const width = bar.style.width;
-        bar.style.width = '0%';
-        
-        setTimeout(() => {
-          bar.style.width = width;
-        }, 100);
+  if (keycaps.length === 0) {
+    console.error("Elemen skill (keycap) tidak ditemukan.");
+    return;
+  }
+
+  function resetDisplay() {
+    descriptionDisplay.classList.remove('visible');
+    setTimeout(() => {
+        nameDisplay.textContent = 'Select a Skill';
+        descriptionDisplay.textContent = 'Click on a keycap below to see the details here.';
+        nameDisplay.style.color = '';
+        descriptionDisplay.classList.add('visible');
+    }, 150);
+  }
+
+  function setActiveKey(index) {
+    if (activeIndex === index) return;
+    if (activeIndex !== -1) {
+      keycaps[activeIndex].classList.remove('active');
+    }
+    activeIndex = index;
+    const key = keycaps[activeIndex];
+    key.classList.add('active');
+    const name = key.dataset.name;
+    const description = key.dataset.description;
+    const activeColor = window.getComputedStyle(key).getPropertyValue('--glow-color').trim();
+
+    descriptionDisplay.classList.remove('visible');
+    setTimeout(() => {
+        nameDisplay.textContent = name;
+        descriptionDisplay.textContent = description;
+        nameDisplay.style.color = activeColor;
+        descriptionDisplay.classList.add('visible');
+    }, 150);
+  }
+
+  keycaps.forEach((key, index) => {
+    key.addEventListener('click', () => {
+      if (activeIndex === index) {
+        key.classList.remove('active');
+        activeIndex = -1;
+        resetDisplay();
+      } else {
+        setActiveKey(index);
       }
     });
-  }, observerOptions);
+  });
 
-  skillBars.forEach(bar => observer.observe(bar));
-</script> -->
+  document.addEventListener('keydown', (e) => {
+    let newIndex = activeIndex;
+    if (activeIndex === -1) {
+      if (['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'].includes(e.key)) {
+        newIndex = 0;
+      } else {
+        return;
+      }
+    } else {
+      switch (e.key) {
+        case 'ArrowRight':
+          newIndex = (activeIndex + 1) % keycaps.length;
+          break;
+        case 'ArrowLeft':
+          newIndex = (activeIndex - 1 + keycaps.length) % keycaps.length;
+          break;
+        case 'ArrowDown':
+          newIndex = (activeIndex + skillsPerRow);
+          if (newIndex >= keycaps.length) {
+            newIndex = activeIndex % skillsPerRow;
+          }
+          break;
+        case 'ArrowUp':
+          newIndex = (activeIndex - skillsPerRow + keycaps.length) % keycaps.length;
+          break;
+        default:
+          return;
+      }
+    }
+    e.preventDefault();
+    setActiveKey(newIndex);
+  });
+
+  resetDisplay();
+});
+</script>
