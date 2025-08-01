@@ -4,6 +4,12 @@
   publish = "dist"
   functions = "netlify/functions"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
