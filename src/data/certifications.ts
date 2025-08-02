@@ -2,6 +2,32 @@ import type { Certification } from '../types';
 
 export const certifications: Certification[] = [
   {
+    id: 'kubernetes-cks',
+    name: 'Certified Kubernetes Security Specialist (CKS)',
+    issuer: 'Udemy',
+    issuedDate: '2025-08-02',
+    credentialId: 'UC-1ca65a39-4781-4433-a4d6-a25eb871485d',
+    credentialUrl: 'https://ude.my/UC-1ca65a39-4781-4433-a4d6-a25eb871485d',
+    category: 'security',
+    description: 'This course provides a deep dive into Kubernetes security, covering everything from cluster and system hardening to minimizing microservice vulnerabilities. With a strong focus on practical, hands-on learning, it prepares you to secure Kubernetes environments and pass the CKS exam. You will learn to manage cluster security, secure the software supply chain, and implement robust monitoring, logging, and runtime security.',
+    skills: ['Cluster Setup', 'Cluster Hardening', 'System Hardening', 'Microservice Vulnerabilities', 'Supply Chain Security', 'Monitoring, Logging, and Runtime Security'],
+    featured: true,
+    logo: '/logo-kubernetes.png'
+  },
+  {
+    id: 'kubernetes-ckad',
+    name: 'Certified Kubernetes Application Developer (CKAD)',
+    issuer: 'Udemy',
+    issuedDate: '2025-08-02',
+    credentialId: 'UC-062450bc-03d8-4cad-bad7-121da480c50f',
+    credentialUrl: 'https://ude.my/UC-062450bc-03d8-4cad-bad7-121da480c50f',
+    category: 'development',
+    description: 'This course is designed to provide a strong foundation in Kubernetes and prepare you for the Certified Kubernetes Application Developer (CKAD) exam. Starting with the basics of container orchestration, the course quickly moves into a deep dive into Kubernetes, with a focus on practical, hands-on labs. You will learn to deploy and manage applications on Kubernetes, and gain the confidence to pass the CKAD exam.',
+    skills: ['Kubernetes', 'Application Deployment', 'CKAD', 'Container Orchestration', 'YAML'],
+    featured: true,
+    logo: '/logo-kubernetes.png'
+  },
+  {
     id: 'cisco-networking-basics',
     name: 'Networking Basics',
     issuer: 'Cisco Networking Academy',
