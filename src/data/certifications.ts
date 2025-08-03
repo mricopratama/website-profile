@@ -2,6 +2,19 @@ import type { Certification } from '../types';
 
 export const certifications: Certification[] = [
   {
+    id: 'cisco-networking-devices-config',
+    name: 'Networking Devices and Initial Configuration',
+    issuer: 'Cisco Networking Academy',
+    issuedDate: '2025-08-03',
+    credentialId: 'bc86cba3-88aa-45a4-bf52-e51aa6cf732e',
+    credentialUrl: 'https://www.credly.com/badges/bc86cba3-88aa-45a4-bf52-e51aa6cf732e',
+    category: 'security',
+    description: 'This course covers the essentials of network device configuration and underlying network principles. It provides proficiency in hierarchical network design, number system conversions (decimal, binary, hexadecimal), and the operation of Ethernet in switched networks. Key skills include designing IPv4 subnetting schemes, understanding local network communication via ARP, and the functioning of DNS and DHCP services. It also involves comparing transport layer protocols and practical experience in building a simple computer network using Cisco IOS.',
+    skills: ['Hierarchical Network Design', 'IPv4 Subnetting', 'Ethernet Operates', 'Virtualization and Cloud Services', 'Network Layer Protocols', 'ARP', 'DNS', 'DHCP', 'Transport Layer Protocols', 'Cisco IOS'],
+    featured: true,
+    logo: '/logo-cisco.png'
+  },
+  {
     id: 'kubernetes-cks',
     name: 'Certified Kubernetes Security Specialist (CKS)',
     issuer: 'Udemy',
