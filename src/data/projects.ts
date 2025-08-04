@@ -4,8 +4,8 @@ export const projects: Project[] = [
   {
     id: 'cine-finder',
     title: 'Cine-Finder',
-    description: 'Aplikasi pencarian film yang memungkinkan pengguna menemukan informasi detail tentang film, termasuk sinopsis, rating, dan pemeran.',
-    longDescription: 'Cine-Finder adalah aplikasi web front-end yang saya bangun untuk melatih kemampuan dalam mengonsumsi REST API. Aplikasi ini terhubung ke The Movie Database (TMDb) API untuk mengambil data film secara real-time. Pengguna dapat mencari film berdasarkan judul, melihat film yang sedang populer, dan mendapatkan detail lengkap untuk setiap film. Proyek ini dibangun untuk memperdalam pemahaman dasar pengembangan web front-end.',
+    description: 'A film search application that allows users to find detailed information about films, including synopsis, ratings, and cast.',
+    longDescription: 'Cine-Finder is a front-end web application I built to practice consuming REST APIs. The application connects to The Movie Database (TMDb) API to fetch real-time movie data. Users can search for films by title, view popular movies, and get complete details for each film. This project was built to deepen the fundamental understanding of front-end web development.',
     technologies: ['JavaScript', 'HTML', 'CSS', 'REST API', 'TMDb API', 'Netlify', 'React'],
     images: [
       '/film-icon.svg'
@@ -16,22 +16,22 @@ export const projects: Project[] = [
     featured: true,
     completedAt: '2025-07-28',
     challenges: [
-      'Mengelola state aplikasi secara efisien tanpa menggunakan framework.',
-      'Membuat tata letak galeri film yang sepenuhnya responsif.',
-      'Menangani asynchronous request ke API dengan bersih dan benar.'
+      'Managing application state efficiently without a framework.',
+      'Creating a fully responsive film gallery layout.',
+      'Handling asynchronous API requests cleanly and correctly.'
     ],
     solutions: [
-      'Menggunakan arsitektur berbasis komponen dengan modul JavaScript.',
-      'Memanfaatkan CSS Grid dan Flexbox untuk desain yang adaptif.',
-      'Mengimplementasikan async/await dengan Fetch API untuk request yang mudah dibaca.'
+      'Used a component-based architecture with JavaScript modules.',
+      'Utilized CSS Grid and Flexbox for an adaptive design.',
+      'Implemented async/await with the Fetch API for readable requests.'
     ],
     role: 'Front-End Developer'
   },
   {
     id: 'dimsum-date',
-    title: 'Web Profile Dimsum Date',
-    description: 'Website profil perusahaan untuk bisnis kuliner Dimsum Date, menampilkan menu, galeri, informasi kontak, dan lokasi.',
-    longDescription: 'Sebagai Full-Stack Developer, saya membangun website profil ini dari awal menggunakan Laravel untuk backend dan manajemen data, serta Tailwind CSS untuk antarmuka yang responsif dan modern. Proyek ini dilengkapi dengan panel admin yang dibuat menggunakan Filament, memungkinkan pemilik untuk dengan mudah mengelola konten website seperti menu, promo, dan informasi bisnis lainnya secara mandiri.',
+    title: 'Dimsum Date Company Profile',
+    description: 'A company profile website for the culinary business Dimsum Date, featuring a menu, gallery, contact information, and location.',
+    longDescription: 'As a Full-Stack Developer, I built this profile website from scratch using Laravel for the backend and data management, and Tailwind CSS for a responsive and modern interface. The project includes an admin panel created with Filament, allowing the owner to easily manage website content such as menus, promotions, and other business information independently.',
     technologies: ['Laravel', 'PHP', 'Livewire', 'Tailwind', 'MySQL', 'Filament'],
     images: [
       '/logo-dimsum.svg'
@@ -42,22 +42,22 @@ export const projects: Project[] = [
     featured: true,
     completedAt: '2025-07-14',
     challenges: [
-      'Membuat panel admin yang intuitif untuk klien non-teknis',
-      'Mengoptimalkan gambar menu untuk loading cepat tanpa kehilangan kualitas',
-      'Merancang desain yang menarik dan sesuai dengan branding Dimsum Date'
+      'Creating an intuitive admin panel for non-technical clients.',
+      'Optimizing menu images for fast loading without losing quality.',
+      'Designing an attractive layout that matches the Dimsum Date branding.'
     ],
     solutions: [
-      'Menggunakan Filament untuk membangun panel admin yang cepat dan user-friendly',
-      'Menerapkan teknik kompresi gambar dan lazy loading',
-      'Berkolaborasi dengan desainer untuk mengimplementasikan UI/UX yang modern'
+      'Used Filament to build a fast and user-friendly admin panel.',
+      'Implemented image compression and lazy loading techniques.',
+      'Collaborated with a designer to implement a modern UI/UX.'
     ],
     role: 'Full-Stack Developer'
   },
   {
     id: 'visual-novel-sdgs12',
-    title: 'Konsumsi dan Produksi yang Bertanggung Jawab',
-    description: 'Visual novel edukatif bertema SDG-12 yang bertujuan meningkatkan kesadaran tentang pentingnya konsumsi dan produksi yang bertanggung jawab.',
-    longDescription: 'Dalam proyek ini, saya berperan sebagai Technical Artist. Tanggung jawab saya meliputi integrasi aset visual (karakter, latar belakang) ke dalam engine Ren\'Py, membuat script untuk alur cerita interaktif, serta menambahkan animasi dan efek visual sederhana untuk meningkatkan pengalaman pemain. Proyek ini menggabungkan narasi dan elemen visual untuk menyampaikan pesan edukatif secara efektif.',
+    title: 'Responsible Consumption and Production',
+    description: 'An educational visual novel themed on SDG-12, aiming to raise awareness about the importance of responsible consumption and production.',
+    longDescription: 'In this project, I served as a Technical Artist. My responsibilities included integrating visual assets (characters, backgrounds) into the Ren\'Py engine, scripting the interactive storyline, and adding simple animations and visual effects to enhance the player experience. This project combines narrative and visual elements to effectively deliver an educational message.',
     technologies: ['Python', 'Ren Py', 'Photoshop', 'Audacity', 'Adobe Express'],
     images: [
       '/circular_economy_diagram.png'
@@ -68,22 +68,22 @@ export const projects: Project[] = [
     featured: false,
     completedAt: '2025-07-09',
     challenges: [
-      'Mengadaptasi cerita linear menjadi narasi interaktif dengan cabang',
-      'Mengoptimalkan aset visual agar berjalan lancar di berbagai perangkat',
-      'Menerjemahkan konsep abstrak SDG-12 menjadi alur cerita yang menarik'
+      'Adapting a linear story into an interactive narrative with branches.',
+      'Optimizing visual assets to run smoothly on various devices.',
+      'Translating the abstract concept of SDG-12 into an engaging storyline.'
     ],
     solutions: [
-      'Menggunakan sistem state dan flag dalam Ren\'Py untuk mengelola pilihan pemain',
-      'Melakukan proses kompresi dan penyesuaian resolusi pada semua aset visual',
-      'Merancang dialog dan skenario yang relevan dengan kehidupan sehari-hari'
+      'Used Ren\'Py\'s state and flag system to manage player choices.',
+      'Performed compression and resolution adjustments on all visual assets.',
+      'Designed dialogues and scenarios relevant to daily life.'
     ],
     role: 'Technical Artist'
   },
   {
-    id: 'enterprise-resources-planning',
-    title: 'Enterprise Resources Planning',
-    description: 'Sistem ERP berbasis web yang dirancang untuk membantu perusahaan mengelola proses bisnis inti seperti inventaris, penjualan, dan sumber daya manusia.',
-    longDescription: 'Sebagai Backend Developer, saya berfokus pada pengembangan logika bisnis inti dan arsitektur database. Saya membangun modul-modul utama menggunakan Laravel, merancang skema database di MySQL, dan membuat REST API untuk komunikasi antara backend dan frontend. Sistem ini menggunakan template AdminLTE untuk dashboard admin yang fungsional dan mudah digunakan.',
+    id: 'enterprise-resource-planning',
+    title: 'Enterprise Resource Planning',
+    description: 'A web-based ERP system designed to help companies manage core business processes such as inventory, sales, and human resources.',
+    longDescription: 'As a Backend Developer, I focused on developing the core business logic and database architecture. I built the main modules using Laravel, designed the database schema in MySQL, and created a REST API for communication between the backend and frontend. The system uses the AdminLTE template for a functional and user-friendly admin dashboard.',
     technologies: ['Laravel', 'PHP', 'MySQL', 'AdminLTE', 'REST API', 'Git'],
     images: [
       'https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -95,23 +95,23 @@ export const projects: Project[] = [
     featured: false,
     completedAt: '2025-07-30',
     challenges: [
-      'Merancang struktur database yang scalable untuk modul yang kompleks',
-      'Memastikan keamanan data dan otorisasi user berdasarkan peran',
-      'Mengelola proses bisnis yang rumit menjadi alur kerja yang logis di dalam sistem'
+      'Designing a scalable database structure for complex modules.',
+      'Ensuring data security and user authorization based on roles.',
+      'Managing complex business processes into a logical workflow within the system.'
     ],
     solutions: [
-      'Menerapkan normalisasi database dan relasi yang efisien',
-      'Mengimplementasikan sistem otentikasi dan otorisasi berbasis-peran (Role-Based Access Control) dari Laravel',
-      'Menggunakan pendekatan modular untuk setiap fitur bisnis'
+      'Implemented database normalization and efficient relationships.',
+      'Implemented Laravel\'s role-based authentication and authorization system (RBAC).',
+      'Used a modular approach for each business feature.'
     ],
     role: 'Backend Developer'
   },
   {
-    id: 'self-webs-profile',
+    id: 'my-web-profile',
     title: 'My Web Profile',
-    description: 'Website portofolio pribadi yang cepat dan responsif, dibangun untuk menampilkan proyek, keahlian, dan pengalaman profesional saya.',
-    longDescription: 'Website ini dikembangkan menggunakan Astro untuk performa yang optimal dan pengalaman Browse yang mulus, dengan arsitektur "islands" untuk meminimalkan jejak JavaScript. Saya menggunakan TypeScript untuk memastikan kualitas kode yang tinggi dan type safety, serta Tailwind CSS untuk membangun desain yang modern dan sepenuhnya responsif. Proyek ini berfungsi sebagai pusat profil online saya.',
-    technologies: ['Astro', 'Typescript', 'Tailwind', 'React', 'Netlify'],
+    description: 'A fast and responsive personal portfolio website, built to showcase my projects, skills, and professional experience.',
+    longDescription: 'This website was developed using Astro for optimal performance and a smooth Browse experience, featuring an "islands" architecture to minimize the JavaScript footprint. I used TypeScript to ensure high code quality and type safety, and Tailwind CSS to build a modern and fully responsive design. This project serves as my online profile hub.',
+    technologies: ['Astro', 'TypeScript', 'Tailwind', 'React', 'Netlify'],
     images: [
       '/icon-logo.svg',
     ],
@@ -121,14 +121,14 @@ export const projects: Project[] = [
     featured: true,
     completedAt: '2026-08-03',
     challenges: [
-      'Mengimplementasikan desain yang unik dan personal',
-      'Memastikan skor performa (Lighthouse) yang tinggi',
-      'Menstrukturkan konten agar mudah dinavigasi dan informatif'
+      'Implementing a unique and personal design.',
+      'Ensuring high performance scores (Lighthouse).',
+      'Structuring content to be easily navigable and informative.'
     ],
     solutions: [
-      'Menggunakan Tailwind CSS untuk kustomisasi desain yang mendalam',
-      'Memanfaatkan fitur static site generation dari Astro untuk kecepatan loading maksimal',
-      'Merancang arsitektur informasi yang jelas dan ringkas'
+      'Used Tailwind CSS for deep design customization.',
+      'Leveraged Astro\'s static site generation features for maximum loading speed.',
+      'Designed a clear and concise information architecture.'
     ],
     role: 'Full-Stack Developer'
   }
