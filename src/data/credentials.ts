@@ -2,6 +2,58 @@ import type { Certification, Achievement } from '../types';
 
 export const certifications: Certification[] = [
   {
+    id: 'cisco-junior-cybersecurity-analyst',
+    name: 'Junior Cybersecurity Analyst Career Path',
+    issuer: 'Cisco Networking Academy',
+    issuedDate: '2025-08-05',
+    credentialId: '48535f5d-6aba-4234-ac6b-6000e1e843de',
+    credentialUrl: 'https://www.credly.com/earner/earned/badge/48535f5d-6aba-4234-ac6b-6000e1e843de',
+    category: 'security',
+    description: 'Completed the Junior Cybersecurity Analyst career path, demonstrating the ability to recommend security controls, mitigate network and systems threats, evaluate security posture with assessment tools, and contribute to incident response planning.',
+    skills: ['Cybersecurity Controls', 'Network Security Threat Mitigation', 'Systems Security Threat Mitigation', 'Vulnerability Assessment', 'Risk Assessment', 'Incident Management'],
+    featured: true,
+    logo: '/logo-cisco.png'
+  },
+  {
+    id: 'cisco-cyber-threat-management',
+    name: 'Cyber Threat Management',
+    issuer: 'Cisco Networking Academy',
+    issuedDate: '2025-08-05',
+    credentialId: '944951e1-0824-45c6-8fb2-693af7491626',
+    credentialUrl: 'https://www.credly.com/badges/944951e1-0824-45c6-8fb2-693af7491626',
+    category: 'security',
+    description: 'Proficient in evaluating network and systems vulnerabilities, creating vulnerability assessment plans, and selecting security controls to formulate a risk management plan. Understands compliance frameworks, disaster recovery, and forensic investigation processes.',
+    skills: ['Compliance Frameworks', 'Vulnerability Evaluation', 'Vulnerability Assessment Planning', 'Risk Management', 'Disaster Recovery', 'Incident Response', 'Forensic Investigation'],
+    featured: false,
+    logo: '/logo-cisco.png'
+  },
+  {
+    id: 'cisco-network-defense',
+    name: 'Network Defense',
+    issuer: 'Cisco Networking Academy',
+    issuedDate: '2025-08-05',
+    credentialId: '9ab9ca98-cec0-4992-8c6a-ba13fa583da4',
+    credentialUrl: 'https://www.credly.com/earner/earned/badge/9ab9ca98-cec0-4992-8c6a-ba13fa583da4',
+    category: 'security',
+    description: 'Skilled in documenting network security posture, configuring security on network devices and endpoints (Linux/Windows), and implementing identity lifecycle management. Capable of configuring firewalls, recommending cloud security measures, and applying data protection mechanisms.',
+    skills: ['Network Security Posture', 'Device Security Configuration', 'Endpoint Security', 'Identity Lifecycle Management', 'Firewall Configuration', 'Cloud Security', 'Data Protection', 'PKI', 'Virtualization'],
+    featured: false,
+    logo: '/logo-cisco.png'
+  },
+  {
+    id: 'cisco-endpoint-security',
+    name: 'Endpoint Security',
+    issuer: 'Cisco Networking Academy',
+    issuedDate: '2025-08-04',
+    credentialId: '91a3d843-060d-42c3-a9e6-26470d10ff12',
+    credentialUrl: 'https://www.credly.com/earner/earned/badge/91a3d843-060d-42c3-a9e6-26470d10ff12',
+    category: 'security',
+    description: 'Able to explain data-specific security challenges, recommend threat mitigation measures, and configure networks to meet organizational needs. Proficient in analyzing malware from packet captures and evaluating overall endpoint security.',
+    skills: ['Data Security Challenges', 'Threat Mitigation', 'Network Configuration', 'Malware Analysis', 'Endpoint Security Evaluation'],
+    featured: false,
+    logo: '/logo-cisco.png'
+  },
+  {
     id: 'cisco-networking-devices-config',
     name: 'Networking Devices and Initial Configuration',
     issuer: 'Cisco Networking Academy',
