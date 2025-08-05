@@ -24,7 +24,7 @@ export const certifications: Certification[] = [
     category: 'security',
     description: 'Proficient in evaluating network and systems vulnerabilities, creating vulnerability assessment plans, and selecting security controls to formulate a risk management plan. Understands compliance frameworks, disaster recovery, and forensic investigation processes.',
     skills: ['Compliance Frameworks', 'Vulnerability Evaluation', 'Vulnerability Assessment Planning', 'Risk Management', 'Disaster Recovery', 'Incident Response', 'Forensic Investigation'],
-    featured: false,
+    featured: true,
     logo: '/logo-cisco.png'
   },
   {
@@ -37,7 +37,7 @@ export const certifications: Certification[] = [
     category: 'security',
     description: 'Skilled in documenting network security posture, configuring security on network devices and endpoints (Linux/Windows), and implementing identity lifecycle management. Capable of configuring firewalls, recommending cloud security measures, and applying data protection mechanisms.',
     skills: ['Network Security Posture', 'Device Security Configuration', 'Endpoint Security', 'Identity Lifecycle Management', 'Firewall Configuration', 'Cloud Security', 'Data Protection', 'PKI', 'Virtualization'],
-    featured: false,
+    featured: true,
     logo: '/logo-cisco.png'
   },
   {
@@ -63,7 +63,7 @@ export const certifications: Certification[] = [
     category: 'security',
     description: 'This course covers the essentials of network device configuration and underlying network principles. It provides proficiency in hierarchical network design, number system conversions (decimal, binary, hexadecimal), and the operation of Ethernet in switched networks. Key skills include designing IPv4 subnetting schemes, understanding local network communication via ARP, and the functioning of DNS and DHCP services. It also involves comparing transport layer protocols and practical experience in building a simple computer network using Cisco IOS.',
     skills: ['Hierarchical Network Design', 'IPv4 Subnetting', 'Ethernet Operates', 'Virtualization and Cloud Services', 'Network Layer Protocols', 'ARP', 'DNS', 'DHCP', 'Transport Layer Protocols', 'Cisco IOS'],
-    featured: true,
+    featured: false,
     logo: '/logo-cisco.png'
   },
   {
@@ -76,7 +76,7 @@ export const certifications: Certification[] = [
     category: 'security',
     description: 'This course provides a deep dive into Kubernetes security, covering everything from cluster and system hardening to minimizing microservice vulnerabilities. With a strong focus on practical, hands-on learning, it prepares you to secure Kubernetes environments and pass the CKS exam. You will learn to manage cluster security, secure the software supply chain, and implement robust monitoring, logging, and runtime security.',
     skills: ['Cluster Setup', 'Cluster Hardening', 'System Hardening', 'Microservice Vulnerabilities', 'Supply Chain Security', 'Monitoring, Logging, and Runtime Security'],
-    featured: true,
+    featured: false,
     logo: '/logo-kubernetes.png'
   },
   {
@@ -89,7 +89,7 @@ export const certifications: Certification[] = [
     category: 'development',
     description: 'This course is designed to provide a strong foundation in Kubernetes and prepare you for the Certified Kubernetes Application Developer (CKAD) exam. Starting with the basics of container orchestration, the course quickly moves into a deep dive into Kubernetes, with a focus on practical, hands-on labs. You will learn to deploy and manage applications on Kubernetes, and gain the confidence to pass the CKAD exam.',
     skills: ['Kubernetes', 'Application Deployment', 'CKAD', 'Container Orchestration', 'YAML'],
-    featured: true,
+    featured: false,
     logo: '/logo-kubernetes.png'
   },
   {
