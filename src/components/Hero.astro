@@ -44,29 +44,27 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
     <div class="max-w-4xl mx-auto text-center">
       {/* Profile Image */}
       <div class="mb-8 breathing">
-        <img 
-          src="/foto_profile.jpg" 
-          alt="Profile Picture" 
+        <img
+          src="/foto_profile.jpg"
+          alt="Profile Picture"
           class="w-32 h-32 rounded-full mx-auto object-cover ring-4 ring-primary-500/50 shadow-xl hover:ring-8 hover:ring-primary-400/30 transition-all duration-500 cyber-avatar"
         />
         <div class="cyber-scan-line"></div>
       </div>
-      
+
       {/* Main Content */}
-      <h1 class="text-5xl md:text-7xl font-bold mb-6 text-shadow">
-        <span class="text-shimmer cyber-text">
-          Full-Stack Developer
-        </span>
-        <br />
-        <span class="text-white cyber-text">
-          & Cybersecurity Analyst
+      <h1 class="text-5xl md:text-7xl font-bold mb-2 text-shadow">
+        <span class="text-shimmer cyber-text white-gray-shimmer">
+          Muhammad Rico Pratama
         </span>
       </h1>
-      
-      <p class="text-xl md:text-2xl text-dark-300 mb-8 max-w-3xl mx-auto leading-relaxed breathing cyber-tagline min-h-[56px] md:min-h-[64px]">
-        <span id="typing-text-container"></span><span class="cursor">&nbsp;</span>
-      </p>
-      
+
+      <div class="marquee-container breathing cyber-text">
+        <div class="marquee-text">
+          Full Stack Developer & Cybersecurity Analyst
+        </div>
+      </div>
+
       {/* Stats, Buttons, and Tech Stack remain the same */}
       <div class="grid grid-cols-3 gap-8 mb-10 max-w-2xl mx-auto breathing cyber-stats">
         <div class="text-center hover:scale-110 transition-transform duration-300 stat-card">
@@ -105,27 +103,39 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 </section>
 
 <style>
-  /* CSS for the typing cursor effect */
+  /* CSS for the typing cursor effect (not used anymore) */
   .cursor {
-    display: inline-block;
-    background-color: #00ff00;
-    width: 3px;
-    margin-left: 2px;
-    animation: blink-cursor 0.7s infinite;
+    display: none; /* Hide the cursor */
   }
-  @keyframes blink-cursor {
-    0%, 100% { background-color: #00ff00; }
-    50% { background-color: transparent; }
-  }
-  
+
   /* CSS for the dynamic text highlight */
   .highlight-text-dynamic {
     color: #00ff00;
     font-weight: 600;
     text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
   }
-  
-  /* Other styles remain the same */
+
+  /* Marquee Styles */
+  .marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 8px;
+  }
+
+  .marquee-text {
+    display: inline-block;
+    padding-left: 100%; /* Start off-screen */
+    font-size: 2.5rem; /* Increased font size */
+    color: #ffffff;
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+    animation: marquee 10s linear infinite; /* Adjust duration as needed */
+  }
+
+  @keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+  }
+
   .cyber-theme { position: relative; }
   .matrix-rain { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='10' y='20' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E01%3C/text%3E%3Ctext x='30' y='40' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E10%3C/text%3E%3Ctext x='50' y='60' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E11%3C/text%3E%3Ctext x='70' y='80' font-family='monospace' font-size='12' fill='%2300ff00' opacity='0.1'%3E00%3C/text%3E%3C/svg%3E"); animation: matrixFall 2s linear infinite; }
   @keyframes matrixFall { from { background-position-y: 0; } to { background-position-y: 100px; } }
@@ -146,7 +156,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
   .cyber-avatar { position: relative; }
   .cyber-scan-line { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #00ff00, transparent); animation: scanAvatar 3s ease-in-out infinite; }
   @keyframes scanAvatar { 0% { transform: translateY(0); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(128px); opacity: 0; } }
-  .cyber-text { position: relative; text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor; }
+  .cyber-text { position: relative; }
   .highlight-text { background: linear-gradient(45deg, #00ff00, #00ffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; }
   .cyber-stats .stat-card { position: relative; padding: 1rem; border: 1px solid rgba(0, 255, 0, 0.3); border-radius: 8px; background: rgba(0, 0, 0, 0.3); }
   .cyber-number { text-shadow: 0 0 10px currentColor; animation: numberPulse 2s ease-in-out infinite; }
@@ -162,6 +172,20 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
   .tech-badge:hover::before { left: 100%; }
   .terminal-command.typing-effect { overflow: hidden; border-right: 2px solid #00ff00; white-space: nowrap; animation: typewriter 4s steps(40) infinite; }
   @keyframes typewriter { 0% { width: 0; } 50% { width: 100%; } 100% { width: 0; } }
+  
+  .white-gray-shimmer {
+    background: linear-gradient(90deg, #ffffff, #d1d5db, #9ca3af, #ffffff);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: whiteGrayShimmer 3s ease-in-out infinite;
+  }
+  
+  @keyframes whiteGrayShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
 </style>
 
 <script>
@@ -189,76 +213,10 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
     });
   });
 
-  // Typing effect logic
   document.addEventListener('DOMContentLoaded', function() {
     // Animate counters
     document.querySelectorAll('.counter').forEach(counter => {
       counterObserver.observe(counter);
     });
-    
-    // ==== SCRIPT EFEK MENGETIK DENGAN LOGIKA BARU DAN LEBIH ANDAL ====
-    const typingContainer = document.getElementById('typing-text-container');
-    if (typingContainer) {
-      const jobs = [
-        { text: "Architecting scalable and resilient web solutions, from database to deployment.", highlights: ["Architecting", "scalable", "resilient"] },
-        { text: "Proactively hunting for threats and engineering bulletproof digital defenses.", highlights: ["hunting for threats", "bulletproof"] },
-        { text: "Where innovative development meets impenetrable security.", highlights: ["innovative development", "impenetrable security"] }
-      ];
-
-      // Fungsi untuk mengubah teks biasa menjadi array unit (karakter atau tag utuh)
-      function createCharacterMap(text, highlights) {
-        let highlightedText = text;
-        highlights.forEach(word => {
-            const regex = new RegExp(`\\b(${word})\\b`, 'gi');
-            highlightedText = highlightedText.replace(regex, `<span class="highlight-text-dynamic">$1</span>`);
-        });
-
-        const map = [];
-        let i = 0;
-        while (i < highlightedText.length) {
-            if (highlightedText[i] === '<') {
-                const tagEnd = highlightedText.indexOf('>', i);
-                map.push(highlightedText.substring(i, tagEnd + 1));
-                i = tagEnd + 1;
-            } else {
-                map.push(highlightedText[i]);
-                i++;
-            }
-        }
-        return map;
-      }
-      
-      let jobIndex = 0;
-      let mapIndex = 0;
-      let isDeleting = false;
-
-      function typeText() {
-        const currentJob = jobs[jobIndex];
-        const characterMap = createCharacterMap(currentJob.text, currentJob.highlights);
-
-        if (isDeleting) {
-          mapIndex--;
-        } else {
-          mapIndex++;
-        }
-
-        typingContainer.innerHTML = characterMap.slice(0, mapIndex).join('');
-
-        let typingSpeed = isDeleting ? 40 : 80;
-
-        if (!isDeleting && mapIndex >= characterMap.length) {
-          typingSpeed = 2000;
-          isDeleting = true;
-        } else if (isDeleting && mapIndex === 0) {
-          isDeleting = false;
-          jobIndex = (jobIndex + 1) % jobs.length;
-          typingSpeed = 500;
-        }
-        
-        setTimeout(typeText, typingSpeed);
-      }
-
-      typeText();
-    }
   });
 </script>
