@@ -4,6 +4,18 @@
   publish = "dist"
   functions = "netlify/functions"
 
+[functions]
+  # Load environment variables from .env file
+  node_bundler = "esbuild"
+
+[dev]
+  # Netlify dev will run on port 8888
+  # Astro will run on its default port 4321
+  command = "astro dev"
+  targetPort = 4321
+  port = 8888
+  autoLaunch = false
+
 [[headers]]
   for = "/*"
   [headers.values]

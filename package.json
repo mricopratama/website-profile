@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "netlify dev",
+    "dev:astro": "astro dev",
     "copy:data": "node -e \"require('fs').cpSync('src/data', 'netlify/functions/data', { recursive: true })\"",
     "build": "npm run copy:data && astro build",
     "preview": "astro preview",
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@netlify/functions": "^4.1.15",
     "@types/node": "^24.1.0",
+    "netlify-cli": "^23.11.1",
     "typescript": "^5.8.3"
   }
 }
