@@ -2,6 +2,33 @@ import type { Project } from '../types';
 
 export const projects: Project[] = [
   {
+    id: 'nilscope',
+    title: 'NilScope',
+    description: 'A fast and automated vulnerability scanner built with Golang and Next.js. NilScope utilizes concurrent worker pools to scan ports, identify running services, and detect security risks in real-time.',
+    longDescription: 'NilScope is an Automated Attack Surface Management (ASM) tool designed to help developers and security engineers identify potential vulnerabilities. Built with a high-performance Go (Golang) backend, it leverages Go\'s concurrency model (Goroutines & Worker Pools) to perform rapid port scanning and banner grabbing without blocking resources. The results are analyzed for outdated services or risky configurations and presented in a modern, responsive dashboard built with Next.js and Tailwind CSS.',
+    technologies: ['Golang', 'Next.js', 'Tailwind CSS', 'REST API', 'Vercel'],
+    images: [
+      '/tampilan-nilscope.png',
+      '/icon-nilscope.svg',
+    ],
+    demoUrl: 'https://nilscope.vercel.app',
+    githubUrl: ['https://github.com/mricopratama/frontend-nilscope', 'https://github.com/mricopratama/backend-nilscope'],
+    category: 'web',
+    featured: true,
+    completedAt: '2025-12-24',
+    challenges: [
+      'Implementing efficient concurrency for port scanning.',
+      'Designing a user-friendly dashboard for displaying scan results.',
+      'Ensuring accurate detection of outdated services and vulnerabilities.'
+    ],
+    solutions: [
+      'Utilized Goroutines and Worker Pools to handle multiple scans simultaneously.',
+      'Employed Tailwind CSS to create a clean and responsive UI/UX design.',
+      'Integrated third-party vulnerability databases for comprehensive risk analysis.'
+    ],
+    role: 'Full-Stack Developer'
+  },
+  {
     id: 'cine-finder',
     title: 'Cine-Finder',
     description: 'A film search application that allows users to find detailed information about films, including synopsis, ratings, and cast.',
@@ -13,7 +40,7 @@ export const projects: Project[] = [
     demoUrl: 'https://findermov.netlify.app',
     githubUrl: 'https://github.com/mricopratama/cine-finder',
     category: 'web',
-    featured: true,
+    featured: false,
     completedAt: '2025-07-28',
     challenges: [
       'Managing application state efficiently without a framework.',
@@ -39,7 +66,7 @@ export const projects: Project[] = [
     demoUrl: 'https://dimsumdate.com',
     githubUrl: 'https://github.com/padiw123/Web-Profile-Dimsum-Date',
     category: 'web',
-    featured: true,
+    featured: false,
     completedAt: '2025-07-14',
     challenges: [
       'Creating an intuitive admin panel for non-technical clients.',
@@ -118,7 +145,7 @@ export const projects: Project[] = [
     demoUrl: 'https://mricopratama.netlify.app',
     githubUrl: 'https://github.com/mricopratama/website-profile',
     category: 'web',
-    featured: true,
+    featured: false,
     completedAt: '2026-08-03',
     challenges: [
       'Implementing a unique and personal design.',
