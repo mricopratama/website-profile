@@ -1,8 +1,16 @@
 ---
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import DecryptedText from './DecryptedText';
+import LetterGlitch from './LetterGlitch';
 ---
 
 <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden animated-background cyber-theme">
+  <LetterGlitch
+    glitchSpeed={50}
+    centerVignette={true}
+    outerVignette={false}
+    smooth={true}
+  />
   {/* Background elements remain the same */}
   <div class="absolute inset-0 cyber-grid opacity-30"></div>
   <div class="matrix-rain absolute inset-0 pointer-events-none"></div>
@@ -53,10 +61,17 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
       </div>
 
       {/* Main Content */}
-      <h1 class="text-5xl md:text-7xl font-bold mb-2 text-shadow">
-        <span class="text-shimmer cyber-text white-gray-shimmer">
-          Muhammad Rico Pratama
-        </span>
+      <h1 class="text-4xl md:text-6xl font-bold">
+        <DecryptedText 
+          text="Muhammad Rico Pratama" 
+          speed={100} 
+          maxIterations={20}
+          characters="ABCD1234!@#$"
+          className="revealed"
+          parentClassName="all-letters"
+          encryptedClassName="encrypted"
+          client:visible 
+        />
       </h1>
 
       <div class="marquee-container breathing cyber-text">
