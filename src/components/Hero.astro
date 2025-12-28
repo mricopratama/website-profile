@@ -57,12 +57,12 @@ import DecryptedText from './DecryptedText';
       <h1 class="text-4xl md:text-6xl font-bold">
         <DecryptedText 
           text="Muhammad Rico Pratama" 
-          speed={100} 
-          maxIterations={20}
+          speed={30}
           characters="ABCD1234!@#$"
           className="revealed"
           parentClassName="all-letters"
-          encryptedClassName="encrypted"
+          encryptedClassName="encrypted text-green-500"
+          client:load 
         />
       </h1>
 
