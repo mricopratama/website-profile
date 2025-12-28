@@ -1,16 +1,9 @@
 ---
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import DecryptedText from './DecryptedText';
-import LetterGlitch from './LetterGlitch';
 ---
 
 <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden animated-background cyber-theme">
-  <LetterGlitch
-    glitchSpeed={50}
-    centerVignette={true}
-    outerVignette={false}
-    smooth={true}
-  />
   {/* Background elements remain the same */}
   <div class="absolute inset-0 cyber-grid opacity-30"></div>
   <div class="matrix-rain absolute inset-0 pointer-events-none"></div>
@@ -70,7 +63,8 @@ import LetterGlitch from './LetterGlitch';
           className="revealed"
           parentClassName="all-letters"
           encryptedClassName="encrypted"
-          client:visible 
+          animateOn="view"
+          client:load 
         />
       </h1>
 
